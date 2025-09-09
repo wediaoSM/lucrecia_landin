@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Makeup — Landing</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Seus outros CSSs -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="steps.css">
+  <!-- Hero overrides (coloque este depois dos demais) -->
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-standalone hero-enhanced hero-minimal has-photo" id="top" role="region" aria-label="Hero">
+    <!-- variável --hero-photo permite trocar a imagem inline; se não usar, o CSS usa fallback -->
+    <div class="hero-photo" style="--hero-photo:url('imagens/hero-bg.jpg')"></div>
+
+    <!-- overlays / texturas (mantive os elementos existentes) -->
+    <div class="hero-overlay"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-texture"></div>
+
+    <div class="hero-inner">
+      <header class="topbar-desktop hero-topbar">
+        <div class="brand desktop-brand hero-brand">
+          <div class="logo-title">MAKEUP</div>
+          <div class="subtitle">EST • VISAGE</div>
+        </div>
+        <nav class="desktop-nav hero-nav" aria-label="navegação principal"></nav>
+      </header>
+
+      <div class="hero-center">
+        <h1 class="hero-name hero-name-split" aria-label="Amika Androsova">
+          <span class="line-first">LUH</span>
+          <span class="line-second">MORAES</span>
+        </h1>
+        <p class="hero-role-line" aria-label="Makeup Artist e Image Stylist">MAKEUP ARTIST • IMAGE STYLIST</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- resto do seu HTML... -->
+
+  <script>document.getElementById && (document.getElementById('yearCopy') && (document.getElementById('yearCopy').textContent=new Date().getFullYear()));</script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main id="mainContent" class="page-content" tabindex="-1">
+    <!-- SOBRE -->
+    <section id="about" class="section about about-enhanced about-minimal">
+      <div class="about-shell">
+        <figure class="about-photo">
+          <img src="imagens/luh.jpg" alt="Profissional em close" loading="lazy">
+        </figure>
+        <div class="about-content">
+          <header class="about-head">
+            <span class="about-index">01</span>
+            <h2 class="about-title">SOBRE MIM</h2>
+            <div class="about-underline" aria-hidden="true"></div>
+          </header>
+          <p class="about-intro">Maquiadora profissional desde 2013 focada em criação de looks de alto impacto, noivas e direção de imagem.</p>
+          <ul class="about-facts" aria-label="Principais destaques">
+            <li>Experiência internacional em editoriais e campanhas.</li>
+            <li>Workshops presenciais e online para profissionais.</li>
+            <li>Processo personalizado: análise, prova e execução.</li>
+            <li>Curadoria de produtos e preparação de pele avançada.</li>
+          </ul>
+          <div class="about-actions-minimal">
+            <a href="#works" class="about-btn slim" aria-label="Ver portfólio">PORTFÓLIO</a>
+            <a href="#services" class="about-btn outline slim" aria-label="Ver serviços">SERVIÇOS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASSOS -->
+<section id="steps" class="section steps steps-enhanced steps-minimal steps-split">
+  <div class="container narrow steps-split-inner">
+    <div class="steps-left-col" aria-hidden="true"></div>
+    <div class="steps-right-col">
+      <div class="steps-header" aria-hidden="false">
+        <div class="section-number steps-number">02</div>
+        <h2 class="section-title steps-title">PASSOS</h2>
+      </div>
+
+      <div class="steps-ladder" role="list" aria-label="Passos do processo">
+        <div class="step-item" role="listitem" data-step="01">
+          <div class="step-index">01</div>
+          <div class="step-body">
+            <h4 class="step-title">Consulta</h4>
+            <p class="step-text">Entendimento das necessidades e referências.</p>
+          </div>
+        </div>
+
+        <div class="step-item" role="listitem" data-step="02">
+          <div class="step-index">02</div>
+          <div class="step-body">
+            <h4 class="step-title">Prova</h4>
+            <p class="step-text">Teste do look com ajustes e feedback.</p>
+          </div>
+        </div>
+
+        <div class="step-item" role="listitem" data-step="03">
+          <div class="step-index">03</div>
+          <div class="step-body">
+            <h4 class="step-title">Execução</h4>
+            <p class="step-text">Dia do evento com entrega profissional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- SERVIÇOS -->
+    <section id="services" class="section services">
+      <div class="services-hero" style="background-image:url('imagens/services.jpg')">
+        <div class="services-overlay"></div>
+        <div class="container">
+          <header class="services-header">
+            <h2 class="section-title">SERVIÇOS</h2>
+            <p class="lead">Atendimento personalizado para eventos, editoriais, noivas e aperfeiçoamento profissional.</p>
+          </header>
+
+          <div class="services-grid" role="list">
+            <article class="service-card" role="listitem">
+              <div class="service-icon" aria-hidden="true">💍</div>
+              <h3 class="service-title">Noivas Premium</h3>
+              <p class="service-desc">Consultoria completa + prova técnica + look final resistente à fotografia e longa duração.</p>
+              <ul class="service-tags"><li>Skin Prep</li><li>Airbrush</li><li>Prova</li></ul>
+              <button class="service-cta" aria-label="Agendar maquiagem para noiva">AGENDAR</button>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-icon" aria-hidden="true">📸</div>
+              <h3 class="service-title">Editorial & Fashion</h3>
+              <p class="service-desc">Construção de conceito visual para campanhas, revistas e produção de moda.</p>
+              <ul class="service-tags"><li>Conceito</li><li>Alta Definição</li><li>Correções</li></ul>
+              <button class="service-cta" aria-label="Solicitar serviço editorial">SOLICITAR</button>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-icon" aria-hidden="true">🎓</div>
+              <h3 class="service-title">Workshops</h3>
+              <p class="service-desc">Aulas individuais ou grupos reduzidos para aperfeiçoar técnicas profissionais.</p>
+              <ul class="service-tags"><li>Presencial</li><li>Online</li><li>Material</li></ul>
+              <button class="service-cta" aria-label="Inscrever-se em workshop">INSCREVER</button>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-icon" aria-hidden="true">💡</div>
+              <h3 class="service-title">Consultoria de Imagem</h3>
+              <p class="service-desc">Análise de estilo, cores adequadas, montagem de looks e rotina de beleza otimizada.</p>
+              <ul class="service-tags"><li>Colorimetria</li><li>Rosto</li><li>Produtos</li></ul>
+              <button class="service-cta" aria-label="Agendar consultoria de imagem">AGENDAR</button>
+            </article>
+          </div>
+
+          <div class="services-footer">
+            <button class="about-btn primary-cta" aria-label="Entrar em contato para reservar">RESERVAR AGORA</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRABALHOS (carrossel) -->
+    <section id="works" class="section works works-enhanced works-feature">
+      <div class="container narrow">
+        <h2 class="section-title">TRABALHOS</h2>
+        <p class="lead">Alguns trabalhos do portfólio — as imagens giram automaticamente.</p>
+
+        <div class="carousel theme-sand carousel-advanced" data-autoplay="true" data-interval="3000" data-effect="fade" data-progress="true" aria-roledescription="carrossel" tabindex="0">
+          <div class="carousel-track">
+            <div class="slide" style="background-image:url('imagens/carrosel1.jpg')" role="img" aria-label="Trabalho 1"><span class="caption">Trabalho 1</span></div>
+            <div class="slide" style="background-image:url('imagens/carrosel2.jpg')" role="img" aria-label="Trabalho 2"><span class="caption">Trabalho 2</span></div>
+            <div class="slide" style="background-image:url('imagens/carrosel3.jpg')" role="img" aria-label="Trabalho 3"><span class="caption">Trabalho 3</span></div>
+            <div class="slide" style="background-image:url('imagens/carrosel4.jpg')" role="img" aria-label="Trabalho 4"><span class="caption">Trabalho 4</span></div>
+          </div>
+
+          <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+          <button class="carousel-btn next" aria-label="Próximo">›</button>
+
+          <div class="carousel-dots" aria-hidden="false" aria-live="polite"></div>
+          <div class="carousel-progress" aria-hidden="true"><span class="bar"></span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="footer-grid container">
+        <div class="footer-brand">
+          <h3 class="footer-logo">MAKEUP</h3>
+          <p class="footer-tag">Beleza autoral e profissional.</p>
+          <div class="footer-social" aria-label="Redes sociais">
+            <a href="#" aria-label="Instagram" class="social-link">IG</a>
+            <a href="#" aria-label="Pinterest" class="social-link">PI</a>
+            <a href="#" aria-label="YouTube" class="social-link">YT</a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Navegação secundária">
+          <h4 class="footer-title">Mapa</h4>
+          <ul class="footer-list">
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#steps">Passos</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#works">Trabalhos</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h4 class="footer-title">Contato</h4>
+          <ul class="footer-list">
+            <li><span>Email:</span> contato@makeup.com</li>
+            <li><span>Fone:</span> (11) 99999-0000</li>
+            <li><span>Cidade:</span> São Paulo — SP</li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter">
+          <h4 class="footer-title">Novidades</h4>
+          <p>Receba dicas e datas de workshops.</p>
+          <form class="newsletter-form" action="#" method="post" aria-label="Assinar novidades">
+            <input class="newsletter-input" type="email" placeholder="Seu e-mail" aria-label="Seu e-mail">
+            <button class="newsletter-btn" type="submit" aria-label="Enviar">OK</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copy">© <span id="yearCopy"></span> Makeup Studio. Todos os direitos reservados.</p>
+        <a href="#top" class="back-top" aria-label="Voltar ao topo">Topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yearCopy').textContent=new Date().getFullYear();</script>
+  <script src="script.js"></script>
+</body>
+</html>
