@@ -115,6 +115,7 @@
 /* Role line abaixo do nome, centralizado (pode ficar central - visual agradável) */
 .hero-role-line {
   margin-top:.4rem;
+   margin-left: 320px;
   font-size: clamp(.68rem,1vw,1rem);
   letter-spacing:.34em;
   text-transform:uppercase;
@@ -195,6 +196,9 @@
 
 
 @media (max-width:600px){
+  .hero-role-line{
+    margin-left: 220px;
+  }
 
     .logo-title{
 
@@ -217,4 +221,12 @@
 
 }
 
+}
+
+
+@media (max-width:400px){
+  .hero-role-line{
+    margin-left: 100px;
+  }
+  
 }
