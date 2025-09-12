@@ -1,14 +1,20 @@
 /* ===== hero.css — nome posicionado embaixo, topbar no topo ===== */
 
-.hero-enhanced { background: none !important; position:relative; overflow:hidden; }
+.hero-enhanced {
+  background: none !important;
+  position: relative;
+  overflow: hidden;
+}
 
 /* layout: topbar no topo, nome "empurrado" para baixo */
 .hero-enhanced {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;   /* organiza topbar -> espaço -> nome em coluna */
+  flex-direction: column;
+  /* organiza topbar -> espaço -> nome em coluna */
   align-items: stretch;
-  padding: 0;               /* padding controlado localmente se necessário */
+  padding: 0;
+  /* padding controlado localmente se necessário */
   box-sizing: border-box;
 }
 
@@ -27,7 +33,9 @@
 }
 
 /* esconde .hero-photo se existir para evitar duplicata */
-.hero-photo { display: none !important; }
+.hero-photo {
+  display: none !important;
+}
 
 /* overlay escuro para legibilidade (igual ao mobile) */
 .hero-enhanced::after {
@@ -36,197 +44,411 @@
   inset: 0;
   z-index: 2;
   background: linear-gradient(180deg,
-    rgba(0,0,0,0.36) 0%,
-    rgba(0,0,0,0.50) 55%,
-    rgba(0,0,0,0.66) 100%);
+      rgba(0, 0, 0, 0.36) 0%,
+      rgba(0, 0, 0, 0.50) 55%,
+      rgba(0, 0, 0, 0.66) 100%);
   pointer-events: none;
 }
 
 /* texturas/gradientes por cima do overlay (opcional) */
-.hero-overlay  { position:absolute; inset:0; z-index:3; pointer-events:none; opacity:.18; }
-.hero-gradient { position:absolute; inset:0; z-index:4; pointer-events:none; opacity:.18; }
-.hero-texture  { position:absolute; inset:0; z-index:5; pointer-events:none; opacity:.14; }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: .18;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: .18;
+}
+
+.hero-texture {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: .14;
+}
 
 /* Conteúdo: topbar fixado no topo da coluna, hero-center ficará no final (bottom) */
-.hero-inner { position:relative; z-index:6; display:flex; flex-direction:column; min-height:100vh; }
+.hero-inner {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 /* Topbar -- mantido no topo */
 .hero-topbar {
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:2rem;
-  padding: clamp(1rem,2.2vw,1.6rem) clamp(1rem,3.3vw,3.2rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(1rem, 2.2vw, 1.6rem) clamp(1rem, 3.3vw, 3.2rem);
   /* garante que topbar fique no topo do hero */
-  z-index:7;
+  z-index: 7;
 }
 
 /* marca */
-.hero-brand { display:flex; flex-direction:column; gap:.12rem; }
-.hero-brand .logo-title { font-family:'Playfair Display',serif; font-size: clamp(1.6rem,2.4vw,2.4rem); color:#fff !important; text-shadow:0 6px 18px rgba(0,0,0,.7); }
-.hero-brand .subtitle { font-size:.65rem; letter-spacing:.26em; color:rgba(255,255,255,.9) !important; font-weight:600; }
-.logo-title{
+.hero-brand {
+  display: flex;
+  flex-direction: column;
+  gap: .12rem;
+}
 
-    padding-left: 210px;
+.hero-brand .logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  color: #fff !important;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, .7);
 }
-.subtitle{
-    padding-left: 217px;
+
+.hero-brand .subtitle {
+  font-size: .65rem;
+  letter-spacing: .26em;
+  color: rgba(255, 255, 255, .9) !important;
+  font-weight: 600;
 }
+
+.logo-title {
+
+  padding-left: 210px;
+}
+
+.subtitle {
+  padding-left: 217px;
+}
+
 /* HERO CENTER: posicionado ao final do container (embaixo) */
 .hero-center {
   /* push para baixo */
   margin-top: auto;
-  padding: clamp(.9rem,2.6vw,2.2rem) clamp(1.2rem,4vw,6rem) clamp(2rem,6vh,4.5rem);
-  text-align:center;           /* container centralizado horizontalmente */
+  padding: clamp(.9rem, 2.6vw, 2.2rem) clamp(1.2rem, 4vw, 6rem) clamp(2rem, 6vh, 4.5rem);
+  text-align: center;
+  /* container centralizado horizontalmente */
   max-width: 820px;
   width: 100%;
-  z-index:7;
-  align-self: center;          /* centraliza o bloco horizontalmente */
-  display:flex;
-  flex-direction:column;
-  gap:.6rem;
+  z-index: 7;
+  align-self: center;
+  /* centraliza o bloco horizontalmente */
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
 }
 
 /* Nome dividido com 1ª linha à esquerda e 2ª à direita dentro do bloco recolhido */
-.hero-name { margin:0; font-family:'Playfair Display',serif; font-weight:700; color:#fff !important; line-height:.9; }
+.hero-name {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #fff !important;
+  line-height: .9;
+}
+
 .hero-name-split {
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  gap:.12rem;
-  padding:0;
-  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: .12rem;
+  padding: 0;
+  margin: 0 auto;
 }
 
 /* as linhas ocupam 100% da largura do bloco; usaremos align-self para posicionar */
 .hero-name-split .line-first {
-  align-self: flex-start; /* esquerda */
-  font-size: clamp(3rem,6vw,5.6rem);
-  color:#fff;
-  text-shadow: 0 8px 26px rgba(0,0,0,.7);
+  align-self: flex-start;
+  /* esquerda */
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  color: #fff;
+  text-shadow: 0 8px 26px rgba(0, 0, 0, .7);
 }
+
 .hero-name-split .line-second {
-  align-self: flex-end;   /* direita */
-  font-size: clamp(3rem,6vw,5.6rem);
-  color:#fff;
-  text-shadow: 0 8px 26px rgba(0,0,0,.7);
+  align-self: flex-end;
+  /* direita */
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  color: #fff;
+  text-shadow: 0 8px 26px rgba(0, 0, 0, .7);
 }
 
 /* Role line abaixo do nome, centralizado (pode ficar central - visual agradável) */
 .hero-role-line {
-  margin-top:.4rem;
-   margin-left: 320px;
-  font-size: clamp(.68rem,1vw,1rem);
-  letter-spacing:.34em;
-  text-transform:uppercase;
-  color: rgba(255,255,255,.95);
-  font-weight:600;
-  align-self:center;
+  margin-top: .4rem;
+  margin-left: 320px;
+  font-size: clamp(.68rem, 1vw, 1rem);
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .95);
+  font-weight: 600;
+  align-self: center;
 }
 
 /* CTAs se houver, ficam abaixo do role line (mantive flex-start caso queira alinhar) */
-.hero-cta-group { display:flex; gap:1rem; margin-top:1rem; justify-content:center; }
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
 
 /* Ajustes responsivos mantendo o nome embaixo */
-@media (max-width:980px){
-    .hero-enhanced::before {
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
+@media (max-width:980px) {
+  .hero-enhanced::before {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 
-}
-  .hero-center { padding-left: clamp(1rem,5vw,2rem); padding-right: clamp(1rem,5vw,2rem); }
+  }
+
+  .hero-center {
+    padding-left: clamp(1rem, 5vw, 2rem);
+    padding-right: clamp(1rem, 5vw, 2rem);
+  }
+
   .hero-name-split .line-first,
-  .hero-name-split .line-second { font-size: clamp(2.4rem,8vw,4.6rem); }
+  .hero-name-split .line-second {
+    font-size: clamp(2.4rem, 8vw, 4.6rem);
+  }
 }
-@media (max-width:760px){
 
-    .logo-title{
+@media (max-width:760px) {
+
+  .logo-title {
 
     padding-left: 500px;
-}
-.subtitle{
+  }
+
+  .subtitle {
     padding-left: 517px;
-}
+  }
 
-    .line-first{
-        padding-left: 120px;
-    }
-    .line-second{
-        padding-right: 50px;
-    }
-       .hero-enhanced::before {
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  .line-first {
+    padding-left: 120px;
+  }
 
-}
+  .line-second {
+    padding-right: 50px;
+  }
 
-  .hero-topbar { padding: .8rem 1rem; }
-  .hero-center { padding-bottom: clamp(1.6rem,6vh,3.6rem); padding-left: clamp(.9rem,6vw,1.4rem); padding-right: clamp(.9rem,6vw,1.4rem); }
+  .hero-enhanced::before {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+  }
+
+  .hero-topbar {
+    padding: .8rem 1rem;
+  }
+
+  .hero-center {
+    padding-bottom: clamp(1.6rem, 6vh, 3.6rem);
+    padding-left: clamp(.9rem, 6vw, 1.4rem);
+    padding-right: clamp(.9rem, 6vw, 1.4rem);
+  }
+
   .hero-name-split .line-first,
-  .hero-name-split .line-second { font-size: clamp(2.2rem,10vw,3.8rem); }
-  .hero-role-line { font-size:.64rem; letter-spacing:.34em; }
-}
-@media (max-width:420px){
+  .hero-name-split .line-second {
+    font-size: clamp(2.2rem, 10vw, 3.8rem);
+  }
 
-    .logo-title{
+  .hero-role-line {
+    font-size: .64rem;
+    letter-spacing: .34em;
+  }
+}
+
+@media (max-width:420px) {
+
+  .logo-title {
 
     padding-left: 220px !important;
-}
-.subtitle{
-    padding-left: 220px !important;
-}
-       .hero-enhanced::before {
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  }
 
-}
-  .hero-center { padding-bottom: clamp(1rem,6vh,2.2rem); }
+  .subtitle {
+    padding-left: 220px !important;
+  }
+
+  .hero-enhanced::before {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+  }
+
+  .hero-center {
+    padding-bottom: clamp(1rem, 6vh, 2.2rem);
+  }
+
   .hero-name-split .line-first,
-  .hero-name-split .line-second { font-size: clamp(1.8rem,12vw,3.2rem); }
-  .hero-brand .subtitle { font-size:.52rem; letter-spacing:.28em; }
+  .hero-name-split .line-second {
+    font-size: clamp(1.8rem, 12vw, 3.2rem);
+  }
+
+
+  .hero-brand .subtitle {
+    font-size: .52rem;
+    letter-spacing: .28em;
+  }
+}
+
+/* --- Ajuste 420px: descer um pouco os textos no mobile pequeno --- */
+@media (max-width: 420px) {
+  .hero-center {
+    /* reduzimos o espaço inferior para que o bloco fique mais próximo da borda de baixo */
+    padding-bottom: clamp(.2rem, 2vh, .8rem);
+  }
+
+  .hero-name-split .line-first {
+    margin-top: .30rem;
+  }
+
+  .hero-name-split .line-second {
+    margin-top: .2rem;
+  }
+
+  .hero-role-line {
+    margin-top: .8rem;
+  }
 }
 
 /* acessibilidade */
-@media (prefers-reduced-motion: reduce){
-  * { transition: none !important; animation: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 
-@media (max-width:600px){
-  .hero-role-line{
+@media (max-width:600px) {
+  .hero-role-line {
     margin-left: 220px;
   }
 
-    .logo-title{
+  .logo-title {
 
     padding-left: 390px;
-}
-.subtitle{
+  }
+
+  .subtitle {
     padding-left: 397px;
+  }
+
+  .line-first {
+    padding-left: 10px;
+  }
+
+  .line-second {
+    padding-right: 0px;
+  }
+
+  .hero-enhanced::before {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+  }
+
 }
 
-    .line-first{
-        padding-left: 10px;
-    }
-    .line-second{
-        padding-right: 0px;
-    }
-       .hero-enhanced::before {
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
 
-}
-
-}
-
-
-@media (max-width:400px){
-  .hero-role-line{
+@media (max-width:400px) {
+  .hero-role-line {
     margin-left: 100px;
   }
-  
+
 }
+
+/* --- Fix: Hero full height on mobile + cover image to remove gray bands --- */
+/* Não repetimos regras existentes; apenas reforçamos/ajustamos comportamentos no fim do arquivo. */
+
+html,
+body {
+  /* elimina possíveis margens padrão que podem aparentar “faixa” */
+  margin: 0;
+  height: 100%;
+}
+
+.hero-standalone {
+  /* ocupa toda a viewport, inclusive em navegadores com barras dinâmicas */
+  min-height: 100vh;
+  /* fallback */
+  min-height: 100svh;
+  /* small viewport height */
+  min-height: 100dvh;
+  /* dynamic viewport height - preferido */
+  position: relative;
+  overflow: hidden;
+  /* evita bleed de overlays e gaps */
+  padding-top: max(env(safe-area-inset-top), 0px);
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+}
+
+/* garante que a foto preencha todo o hero */
+.hero-standalone.has-photo .hero-photo {
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-photo);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* reforço específico para telas pequenas */
+@media (max-width: 480px) {
+  .hero-standalone {
+    min-height: 100dvh;
+  }
+}
+
+/* === FIX: força imagem como cover e evita faixas cinza em mobile === */
+.hero-enhanced,
+.hero-standalone {
+  /* fallback de cor pra não mostrar faixa cinza enquanto carrega */
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  /* garante altura full viewport mesmo em navegadores com barras dinâmicas */
+  min-height: 100svh;
+  min-height: 100dvh;
+  min-height: 100vh;
+  /* fallback */
+}
+
+/* Aplica ao ::before que você já usa, e ao possível .hero-photo absoluto */
+.hero-enhanced::before,
+.hero-standalone::before,
+.hero-standalone.has-photo .hero-photo {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* usa a mesma variável que você já definiu; forçamos override */
+  background-image: var(--hero-photo, url('imagens/hero.jpg')) !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  /* <-- evita as faixas cinza */
+  pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* garante que overlay e gradientes cubram toda área */
+.hero-enhanced::after,
+.hero-standalone::after,
+.hero-overlay,
+.hero-gradient,
+.hero-texture {
+  inset: 0;
+}
+
+/* opcional: se tiver padding top/bottom em .hero-center, verifique e reduza
+   — mas o importante já é o background-size: cover acima. */
