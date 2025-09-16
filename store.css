@@ -1,32 +1,302 @@
 /* store.css - seção LOJA PROFISSIONAL */
-.store-section{background:linear-gradient(180deg,#f4efec 0%,#efe8e3 70%,#e9e1dc 100%);position:relative;overflow:hidden;padding:clamp(3.2rem,7vw,4.8rem) 0;}
-.store-wrapper{max-width:1100px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.6rem);display:flex;flex-direction:column;gap:2.8rem;}
-.store-head{max-width:760px;display:flex;flex-direction:column;gap:.9rem;}
-.store-index{font-size:.68rem;letter-spacing:.34em;font-weight:600;color:#8d7f74;}
-.store-title{margin:0;font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.6vw,3.6rem);letter-spacing:.02em;font-weight:700;color:#352d2a;line-height:.95;}
-.store-lead{margin:0;font-size:clamp(.9rem,1rem + .15vw,1.2rem);line-height:1.55;color:#5b524c;}
+.store-section {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3.2rem, 7vw, 4.8rem) 0;
+}
 
-.store-grid{display:grid;grid-template-columns:minmax(300px,1fr) 300px;align-items:start;gap:3.2rem;}
-.store-card{background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(250,247,245,.55));backdrop-filter:blur(12px) saturate(140%);-webkit-backdrop-filter:blur(12px) saturate(140%);border:1px solid #d2c6be;border-radius:34px;padding:clamp(1.8rem,2.2vw,2.4rem) clamp(1.6rem,2.1vw,2.1rem);box-shadow:0 26px 60px -28px rgba(60,45,35,.25),0 12px 34px -16px rgba(60,45,35,.2);display:flex;flex-direction:column;gap:1.1rem;position:relative;overflow:hidden;}
-.store-card.highlight::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 18%,rgba(255,255,255,.9),transparent 60%),radial-gradient(circle at 80% 78%,rgba(215,165,157,.6),transparent 65%);mix-blend-mode:soft-light;pointer-events:none;}
-.store-card-title{margin:0;font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.8vw,2.2rem);color:#3e3531;letter-spacing:.02em;}
-.store-text{margin:0;font-size:.92rem;line-height:1.55;color:#5a514b;max-width:640px;}
-.store-bullets{margin:.4rem 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.55rem;}
-.store-bullets li{position:relative;padding-left:1.35rem;font-size:.8rem;letter-spacing:.05em;color:#534a45;}
-.store-bullets li::before{content:"";position:absolute;left:0;top:.55rem;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#d7a59d,#c2b8b0);box-shadow:0 0 0 4px rgba(215,165,157,.18);} 
-.store-cta{align-self:flex-start;text-decoration:none;font-size:.62rem;letter-spacing:.32em;font-weight:600;padding:.95rem 1.7rem .85rem;border-radius:90px;background:linear-gradient(135deg,#d7a59d,#c2b8b0);color:#fff;box-shadow:0 14px 36px -16px rgba(170,130,110,.5);transition:.65s cubic-bezier(.66,.01,.27,1);} 
-.store-cta:hover{transform:translateY(-6px);filter:brightness(1.05);} 
-.store-cta:active{transform:translateY(-1px) scale(.96);} 
-.store-cta:focus-visible{outline:2px solid #d7a59d;outline-offset:3px;}
+.store-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.2rem, 4vw, 2.6rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+}
 
-.store-side-info{display:flex;flex-direction:column;gap:1.5rem;}
-.side-block{background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.45));padding:1.2rem 1.4rem 1.05rem;border:1px solid #d6cac2;border-radius:26px;box-shadow:0 18px 48px -24px rgba(60,45,35,.25),0 10px 26px -14px rgba(60,45,35,.2);display:flex;flex-direction:column;gap:.4rem;}
-.side-block h4{margin:0;font-size:.8rem;letter-spacing:.3em;font-weight:700;color:#4d443f;}
-.side-block p{margin:0;font-size:.74rem;line-height:1.5;color:#5d544e;}
+.store-head {
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
 
-/* Responsivo */
-@media (max-width:960px){.store-grid{grid-template-columns:1fr;}}
-@media (max-width:560px){.store-card{padding:1.6rem 1.4rem 1.5rem;border-radius:28px;} .store-side-info{gap:1.2rem;} .side-block{border-radius:22px;} .store-cta{font-size:.56rem;padding:.8rem 1.3rem .7rem;}}
-@media (max-width:400px){.store-title{font-size:clamp(1.9rem,10vw,2.6rem);} .store-lead{font-size:.9rem;} .store-bullets li{font-size:.72rem;} .store-cta{letter-spacing:.28em;}}
+.store-index {
+    font-size: .68rem;
+    letter-spacing: .34em;
+    font-weight: 600;
+    color: #8d7f74;
+}
 
-@media (prefers-reduced-motion: reduce){.store-cta{transition:none!important;}}
+.store-title {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+    letter-spacing: .02em;
+    font-weight: 700;
+    color: #352d2a;
+    line-height: .95;
+}
+
+.store-lead {
+    margin: 0;
+    font-size: clamp(.9rem, 1rem + .15vw, 1.2rem);
+    line-height: 1.55;
+    color: #5b524c;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 300px;
+    align-items: start;
+    gap: 3.2rem;
+}
+
+.store-card {
+    border: 1px solid #d2c6be;
+    border-radius: 34px;
+    padding: clamp(1.8rem, 2.2vw, 2.4rem) clamp(1.6rem, 2.1vw, 2.1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.store-card.highlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 22% 18%, rgba(255, 255, 255, .9), transparent 60%), radial-gradient(circle at 80% 78%, rgba(215, 165, 157, .6), transparent 65%);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+}
+
+.store-card-title {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+    color: #3e3531;
+    letter-spacing: .02em;
+}
+
+.store-text {
+    margin: 0;
+    font-size: .92rem;
+    line-height: 1.55;
+    color: #5a514b;
+    max-width: 640px;
+}
+
+.store-bullets {
+    margin: .4rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+}
+
+.store-bullets li {
+    position: relative;
+    padding-left: 1.35rem;
+    font-size: .8rem;
+    letter-spacing: .05em;
+    color: #534a45;
+}
+
+.store-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    box-shadow: 0 0 0 4px rgba(215, 165, 157, .18);
+}
+
+.store-cta {
+    align-self: center;      /* centraliza no eixo cruzado do flex */
+    margin: 0 auto;          /* garante centralização horizontal */
+    text-decoration: none;
+    font-size: .58rem;       /* levemente menor */
+    letter-spacing: .32em;
+    font-weight: 600;
+    padding: .8rem 1.4rem .72rem;
+    border-radius: 90px;
+    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    color: #fff;
+    box-shadow: 0 14px 36px -16px rgba(170, 130, 110, .5);
+    transition: .65s cubic-bezier(.66, .01, .27, 1);
+}
+
+.store-cta:hover {
+    transform: translateY(-6px);
+    filter: brightness(1.05);
+}
+
+.store-cta:active {
+    transform: translateY(-1px) scale(.96);
+}
+
+.store-cta:focus-visible {
+    outline: 2px solid #d7a59d;
+    outline-offset: 3px;
+}
+
+.store-side-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.side-block {
+    background: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, .45));
+    padding: 1.2rem 1.4rem 1.05rem;
+    border: 1px solid #d6cac2;
+    border-radius: 26px;
+    box-shadow: 0 18px 48px -24px rgba(60, 45, 35, .25), 0 10px 26px -14px rgba(60, 45, 35, .2);
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.side-block h4 {
+    margin: 0;
+    font-size: .8rem;
+    letter-spacing: .3em;
+    font-weight: 700;
+    color: #4d443f;
+}
+
+.side-block p {
+    margin: 0;
+    font-size: .74rem;
+    line-height: 1.5;
+    color: #5d544e;
+}
+
+/* ===== Flat white theme overrides (aplicado abaixo do HERO) ===== */
+/* Coloquei aqui pois este arquivo é carregado por último na página */
+
+/* Fundo e texto globais */
+.page-content,
+.section,
+#about,
+#steps,
+#services,
+#store,
+#works,
+.about,
+.steps,
+.services,
+.store-section,
+.works,
+.site-footer,
+.footer-top,
+.footer-bottom {
+    background: #fff !important;
+    color: #222 !important;
+}
+
+/* Remover overlays/gradientes que criam divisórias */
+.services-overlay {
+    display: none !important;
+    background: transparent !important;
+    opacity: 0 !important;
+}
+
+/* Carrossel e slides brancos (sem blocos cinza) */
+.carousel {
+    background: #fff !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.carousel .slide {
+    background-color: #fff !important;
+}
+
+/* Cards e chips totalmente brancos */
+.service-card,
+.store-card {
+    background: #fff !important;
+    border-color: rgba(0, 0, 0, .06) !important;
+    box-shadow: none !important;
+}
+
+.service-tags li {
+    background: #fff !important;
+    border-color: rgba(0, 0, 0, .08) !important;
+}
+
+.service-icon {
+    background: #fff !important;
+    color: #222 !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, .08) !important;
+}
+
+.service-cta {
+    background: #fff !important;
+    color: #222 !important;
+    border: 1px solid rgba(0, 0, 0, .16) !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+.service-cta:hover {
+    transform: none !important;
+    border-color: rgba(0, 0, 0, .28) !important;
+}
+
+/* Footer branco, sem degradês/botões destacados */
+.footer-top,
+.footer-bottom {
+    background: #fff !important;
+    border-color: rgba(0, 0, 0, .06) !important;
+}
+
+.back-top {
+    background: transparent !important;
+    border: none !important;
+    color: #222 !important;
+    text-decoration: underline;
+}
+
+/* Bordas e sombras gerais removidas para evitar “divisórias” visuais */
+.section,
+.store-wrapper,
+.container,
+.works,
+.about {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 600px) {
+    .side-block {
+        display: none !important;
+    }
+}
+
+/* Override apenas para telas pequenas (<= 400px) */
+@media (max-width: 400px) {
+  /* garante que o card tenha referencia para posicionamento absoluto se precisar */
+  .store-card {
+    position: relative;
+  }
+
+  /* opção padrão: mantém o botão no fluxo (flex) e faz um "nudge" para a esquerda */
+  .store-cta {
+    align-self: center;       /* centraliza horizontalmente dentro do card */
+    margin-left: 0;
+    transform: translateX(-20px); /* desfaze para a esquerda  — ajuste o valor (-8px / -20px) conforme quiser */
+    position: static;         /* garante que volte ao fluxo (caso tenha sido absoluto antes) */
+  }
+}
+
+
+

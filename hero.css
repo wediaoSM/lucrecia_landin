@@ -57,7 +57,7 @@
   inset: 0;
   z-index: 0;
   background-image: var(--hero-photo, url('imagens/hero.jpg'));
-  background-size: 60%;
+  background-size: 100%;
   background-position: center;
   background-repeat: repeat;
   pointer-events: none;
@@ -406,7 +406,7 @@ body {
   background-image: var(--hero-photo);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+
 }
 
 /* reforço específico para telas pequenas */
@@ -465,14 +465,14 @@ body {
 .hero-enhanced::before {
   background-position: center 40%;
   /* foca um pouco mais alto (ajusta conforme a foto) */
-  background-size: cover;
+
   background-repeat: no-repeat;
 }
 
 /* desktop largo: reduz o zoom usando height-fit (auto 100%) e move o foco */
 @media (min-width: 1200px) {
   .hero-enhanced::before {
-    background-size: 67%;
+    background-size: 100%;
     /* cabe a altura sem ampliar tanto a largura */
     background-position: 35% center;
     /* desloca a imagem para a esquerda (ajuste) */
@@ -491,7 +491,7 @@ body {
 
 /* ==================================================
    OVERRIDES E NOVA ESTRATÉGIA DE POSICIONAMENTO
-   - Zera paddings conflitantes espalhados com !important
+   - Zera paddings conflitantes espalhadas com !important
    - Converte line-first para inline-block e aplica
      deslocamento por variável (margin-left)
    - Mantém compatibilidade com breakpoints já definidos
@@ -584,6 +584,8 @@ body {
   .hero-enhanced {
     --hero-line-first-offset: 40px;
   }
+
+  
 }
 
 @media (max-width:600px) {
@@ -619,3 +621,134 @@ body {
     padding-left: 249px !important;
   }
 }
+
+/* Ajuste específico para telas até 400px: logo maior e mais à esquerda */
+@media (max-width: 400px) {
+  .hero-center {
+   margin-left: -160px; /* alinha tudo à esquerda */
+  }
+
+  .hero-logo-figure {
+    margin: 0 !important;              /* remove centralização */
+    padding: 0 !important;
+    transform: translateX(80px);      /* leve empurrão à esquerda */
+  }
+
+  .hero-logo {
+    /* aumentar ainda mais o tamanho do logo no mobile pequeno */
+    width: min(125vw, 900px) !important;
+    transform: scale(4); /* antes 2 */
+    transform-origin: left center;
+    will-change: transform;
+  }
+
+}
+
+/* Hero mais baixo somente em telas até 400px */
+@media (max-width: 400px) {
+  .hero-standalone,
+  .hero-enhanced,
+  .hero-inner {
+    min-height: 60vh !important; /* reduz altura do bloco do hero */
+  }
+
+  .hero-center {
+    padding-top: .4rem !important;
+    padding-bottom: .6rem !important; /* evita que o padding aumente a altura */
+  }
+}
+  
+/* Desktop: aumentar tamanho do logo apenas em telas grandes */
+@media (min-width: 1024px) {
+  .hero-logo {
+    width: clamp(400px, 26vw, 520px) !important;
+    height: auto !important;
+  }
+}
+
+/* Hero responsivo: garante que a imagem do logo não ultrapasse 100vw */
+@media (max-width: 450px) {
+  .hero-logo {
+    width: min(100vw, 120px) !important; /* maior que 100vw para dar “impacto” */
+    height: auto !important;
+    display: block !important;
+    transform: scale(2);              /* amplia visualmente */
+    transform-origin: left center;       /* expande a partir da esquerda */
+  }
+}
+
+/* Desktop: deslocar o logo para a esquerda e para baixo */
+@media (min-width: 1024px) {
+  .hero-logo-figure {
+    transform: translate(260px, 120px) !important; /* esquerda (-) e para baixo (+) */
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .hero-logo {
+    width: clamp(400px, 26vw, 520px) !important;
+    height: auto !important;
+  }
+}
+
+/* Hero responsivo: garante que a imagem do logo não ultrapasse 100vw */
+@media (max-width: 600px) {
+  .hero-logo {
+    width: min(100vw, 140px) !important; /* maior que 100vw para dar “impacto” */
+    height: auto !important;
+    display: block !important;
+    transform: scale(2);              /* amplia visualmente */
+    transform-origin: left center;       /* expande a partir da esquerda */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-center {
+   margin-left: 75px; /* alinha tudo à esquerda */
+  }
+
+
+ }
+
+/* 401–600px: descer apenas o logo (não mexe no hero) */
+@media (max-width: 600px) {
+  .hero-logo-figure {
+    transform: translateY(60px) !important;
+  }
+}
+
+
+
+/* Override final: ≤400px — logo menor, mais à esquerda e um pouco acima */
+@media (max-width: 768px) {
+  .hero-logo {
+    max-width: none !important;
+    width: clamp(300px, 65vw, 220px) !important; /* diminui o tamanho */
+    height: auto !important;
+    transform: none !important;                  /* remove escalas anteriores */
+    display: block !important;
+    
+  }
+
+  .hero-logo-figure {
+    transform: translate(130px, 120px) !important; /* esquerda e um pouco acima */
+  }
+}
+
+/* Override final: ≤400px — logo menor, mais à esquerda e um pouco acima */
+@media (max-width: 420px) {
+  .hero-logo {
+    max-width: none !important;
+    width: clamp(140px, 65vw, 220px) !important; /* diminui o tamanho */
+    height: auto !important;
+    transform: none !important;                  /* remove escalas anteriores */
+    display: block !important;
+  }
+
+  .hero-logo-figure {
+    transform: translate(30px, 70px) !important; /* esquerda e um pouco acima */
+  }
+}
+

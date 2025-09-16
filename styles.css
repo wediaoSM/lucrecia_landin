@@ -1,137 +1,451 @@
-:root{
+:root {
   /* Sandy Serenity palette (applied to the site)
      - feel free to replace with exact hexes if you want a 1:1 match */
-  --sand-1: #9b8b82; /* darkest taupe (used for headings / strong accents) */
-  --sand-2: #d7a59d; /* warm mid tone (secondary accents) */
-  --sand-3: #c2b8b0; /* soft taupe (cards, surfaces) */
-  --sand-4: #d1c8c3; /* light sand (overlays, subtle backgrounds) */
-  --sand-5: #dad6d0; /* very light sand / near-white (page background) */
+  --sand-1: #9b8b82;
+  /* darkest taupe (used for headings / strong accents) */
+  --sand-2: #d7a59d;
+  /* warm mid tone (secondary accents) */
+  --sand-3: #c2b8b0;
+  /* soft taupe (cards, surfaces) */
+  --sand-4: #d1c8c3;
+  /* light sand (overlays, subtle backgrounds) */
+  --sand-5: #dad6d0;
+  /* very light sand / near-white (page background) */
 
-  --text-dark: #231f1d;    /* primary text on light surfaces */
-  --text-muted: rgba(35,31,29,0.6);
+  --text-dark: #231f1d;
+  /* primary text on light surfaces */
+  --text-muted: rgba(35, 31, 29, 0.6);
   --max-width: 1100px;
 }
 
 /* base */
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;background:var(--sand-5);font-family:Montserrat,system-ui,Arial,sans-serif;color:var(--text-dark);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit}
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+ 
+  font-family: Montserrat, system-ui, Arial, sans-serif;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased
+}
+
+img {
+  max-width: 100%;
+  display: block
+}
+
+a {
+  color: inherit
+}
 
 /* skip link */
-.skip-link{
-  position:fixed;
-  left:12px;
-  top:12px;
-  background:var(--sand-1);
-  color:var(--sand-5);
-  padding:8px 12px;
-  border-radius:6px;
-  transform:translateY(-120%);
-  transition:transform .18s ease;
-  z-index:9999;
-  font-size:14px;
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  background: var(--sand-1);
+  color: var(--sand-5);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transform: translateY(-120%);
+  transition: transform .18s ease;
+  z-index: 9999;
+  font-size: 14px;
 }
-.skip-link:focus{transform:translateY(0)}
+
+.skip-link:focus {
+  transform: translateY(0)
+}
 
 /* ===== HERO (responsivo) ===== */
-.hero-standalone{
-  min-height:60vh;
-  width:100%;
-  background-image:url('imagens/hero.jpg');
-  background-size:cover;
-  background-position:center;
-  position:relative;
-  color:var(--sand-1);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:36px 20px;
+.hero-standalone {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('imagens/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: var(--sand-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px;
   /* add subtle border-bottom to separate hero from content */
-  border-bottom: 1px solid rgba(35,31,29,0.04);
+  border-bottom: 1px solid rgba(35, 31, 29, 0.04);
 }
-.hero-overlay{
-  position:absolute;
-  inset:0;
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
   /* warm gradient using sand tones for a gentle overlay */
-  background: linear-gradient(180deg, rgba(155,139,130,0.08) 0%, rgba(45,35,30,0.18) 50%, rgba(35,31,29,0.32) 100%);
-  pointer-events:none;
-  z-index:1;
+  background: linear-gradient(180deg, rgba(155, 139, 130, 0.08) 0%, rgba(45, 35, 30, 0.18) 50%, rgba(35, 31, 29, 0.32) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
-.hero-inner{position:relative;z-index:2;max-width:1100px;width:100%;display:flex;flex-direction:column;gap:20px;padding:16px}
-.topbar-desktop{display:flex;align-items:center;justify-content:space-between}
-.desktop-brand{display:flex;flex-direction:column;gap:6px;font-size:14px}
-.logo-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:3px;color:var(--sand-1)}
-.subtitle{font-size:12px;opacity:.95;text-transform:lowercase;color:var(--sand-3)}
-.desktop-nav .nav-link{color:var(--sand-3);text-decoration:none;margin-left:14px;font-weight:600;letter-spacing:1px;padding:6px;border-radius:6px}
-.desktop-nav .nav-link:focus, .desktop-nav .nav-link:hover{background:rgba(35,31,29,0.06)}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px
+}
+
+.topbar-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza o topo no desktop */
+  gap: 16px;
+}
+
+.desktop-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  text-align: center; /* centraliza marca/subtítulo */
+}
+
+.logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--sand-1)
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: .95;
+  text-transform: lowercase;
+  color: var(--sand-3)
+}
+
+.desktop-nav .nav-link {
+  color: var(--sand-3);
+  text-decoration: none;
+  margin-left: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 6px;
+  border-radius: 6px
+}
+
+.desktop-nav .nav-link:focus,
+.desktop-nav .nav-link:hover {
+  background: rgba(35, 31, 29, 0.06)
+}
 
 /* hero center */
-.hero-center{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:20px}
-.eyebrow{font-size:13px;color:var(--text-muted)}
-.hero-name{font-family:'Playfair Display',serif;font-size:64px;line-height:0.9;text-transform:uppercase;letter-spacing:6px;margin:0;color:var(--sand-1)}
-.hero-about{padding:12px 36px;border-radius:999px;background:var(--sand-1);color:var(--sand-5);border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(35,31,29,0.06)}
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza o bloco do herói em todas as larguras */
+  gap: 12px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 13px;
+  color: var(--text-muted)
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin: 0;
+  color: var(--sand-1);
+  text-align: center; /* título do herói centralizado */
+}
+
+.hero-about {
+  padding: 12px 36px;
+  border-radius: 999px;
+  background: var(--sand-1);
+  color: var(--sand-5);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(35, 31, 29, 0.06)
+}
 
 /* thumbs */
-.thumbs{display:flex;gap:12px}
-.thumb{width:64px;height:48px;border-radius:8px;border:2px solid rgba(35,31,29,0.04);background-size:cover;background-position:center;display:block}
+.thumbs {
+  display: flex;
+  gap: 12px
+}
+
+.thumb {
+  width: 64px;
+  height: 48px;
+  border-radius: 8px;
+  border: 2px solid rgba(35, 31, 29, 0.04);
+  background-size: cover;
+  background-position: center;
+  display: block
+}
 
 /* page content */
-.page-content{background:var(--sand-5);color:var(--text-dark)}
-.section{padding:60px 20px}
-.container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
-.container.narrow{max-width:900px}
+.page-content {
+  background: var(--sand-5);
+  color: var(--text-dark)
+}
+
+.section {
+  padding: 60px 20px
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px
+}
+
+.container.narrow {
+  max-width: 900px
+}
 
 /* ABOUT */
-.about .about-grid{display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:center}
-.section-number{font-size:12px;color:var(--text-muted);letter-spacing:2px}
-.section-title{font-family:'Playfair Display',serif;font-size:26px;margin:8px 0 18px;color:var(--sand-1)}
-.lead{font-size:16px;color:var(--text-dark);line-height:1.6}
-.bullets{margin-top:16px;padding-left:18px;color:var(--text-muted)}
-.about-right img{width:100%;height:auto;border-radius:8px;object-fit:cover}
+.about .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  align-items: center
+}
+
+.section-number {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 2px
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin: 8px 0 18px;
+  color: var(--sand-1)
+}
+
+.lead {
+  font-size: 16px;
+  color: var(--text-dark);
+  line-height: 1.6
+}
+
+.bullets {
+  margin-top: 16px;
+  padding-left: 18px;
+  color: var(--text-muted)
+}
+
+.about-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover
+}
 
 /* STEPS */
-.steps .steps-cards{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px}
-.step-card{background:var(--sand-3);border-radius:12px;padding:20px;flex:1;min-width:220px;box-shadow:0 6px 18px rgba(35,31,29,0.04);color:var(--text-dark)}
-.step-index{font-weight:700;color:var(--sand-1);font-size:20px}
+.steps .steps-cards {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 24px
+}
+
+.step-card {
+  background: var(--sand-3);
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(35, 31, 29, 0.04);
+  color: var(--text-dark)
+}
+
+.step-index {
+  font-weight: 700;
+  color: var(--sand-1);
+  font-size: 20px
+}
 
 /* SERVICES */
-.services .services-hero{position:relative;padding:60px 0;background-size:cover;background-position:center;border-radius:6px;margin:0 0}
-.services-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(155,139,130,0.18) 0%, rgba(35,31,29,0.28) 100%);z-index:1}
-.services .container{position:relative;z-index:2;color:var(--sand-5)}
-.services-list{display:flex;gap:12px;margin:18px 0 28px;flex-wrap:wrap}
-.service-item{background:rgba(35,31,29,0.04);padding:10px 14px;border-radius:8px;color:var(--sand-5)}
+.services .services-hero {
+  position: relative;
+  padding: 60px 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  margin: 0 0
+}
+
+.services-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(155, 139, 130, 0.18) 0%, rgba(35, 31, 29, 0.28) 100%);
+  z-index: 1
+}
+
+.services .container {
+  position: relative;
+  z-index: 2;
+  color: var(--sand-5);
+  text-align: center; /* centraliza textos da seção de serviços */
+}
+
+.services-list {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0 28px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.service-item {
+  background: rgba(35, 31, 29, 0.04);
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--sand-5);
+  width: 100%;
+}
 
 /* CARROSSEL */
-.carousel{position:relative;overflow:hidden;border-radius:10px;margin-top:20px;background:var(--sand-3)}
-.carousel-track{display:flex;transition:transform 450ms ease;will-change:transform}
-.slide{min-width:100%;height:420px;background-size:cover;background-position:center;border-radius:8px;flex-shrink:0}
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;background:rgba(35,31,29,0.25);border:none;color:var(--sand-5);font-size:28px;padding:8px 12px;border-radius:8px;cursor:pointer}
-.carousel-btn.prev{left:12px}
-.carousel-btn.next{right:12px}
-.carousel-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px;z-index:6}
-.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(35,31,29,0.14);cursor:pointer;border:none}
-.carousel-dot.active{background:var(--sand-1)}
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 20px;
+  background: var(--sand-3)
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 450ms ease;
+  will-change: transform
+}
+
+.slide {
+  min-width: 100%;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  flex-shrink: 0
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  background: rgba(35, 31, 29, 0.25);
+  border: none;
+  color: var(--sand-5);
+  font-size: 28px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer
+}
+
+.carousel-btn.prev {
+  left: 12px
+}
+
+.carousel-btn.next {
+  right: 12px
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 6
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(35, 31, 29, 0.14);
+  cursor: pointer;
+  border: none
+}
+
+.carousel-dot.active {
+  background: var(--sand-1)
+}
 
 /* mobile tweaks */
-@media (max-width: 767.98px){
-  .hero-name{font-size:44px;letter-spacing:4px;text-align:center;width:100%}
-  .hero-center{align-items:center}
-  .topbar-desktop{flex-direction:column;gap:10px;align-items:center}
-  .about .about-grid{grid-template-columns:1fr;gap:20px}
-  .slide{height:260px}
-  .hero-standalone{padding:28px 16px;min-height:56vh}
+@media (max-width: 767.98px) {
+  .hero-name {
+    font-size: 44px;
+    letter-spacing: 4px;
+    text-align: center;
+    width: 100%
+  }
+
+  .hero-center {
+    align-items: center
+  }
+
+  .topbar-desktop {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center
+  }
+
+  .about .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px
+  }
+
+  .slide {
+    height: 260px
+  }
+
+  .hero-standalone {
+    padding: 28px 16px;
+    min-height: 56vh
+  }
 }
 
 /* small phones */
-@media (max-width:420px){
-  .hero-name{font-size:40px}
-  .slide{height:220px}
+@media (max-width:420px) {
+  .hero-name {
+    font-size: 40px
+  }
+  .slide {
+    height: 220px
+  }
+
+  /* corrigir largura do painel para não ficar estreito */
+  .page-content {
+    max-width: 95%;
+    margin: 18px auto;
+    border-radius: 12px;
+  }
 }
 
 /* prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce){
-  *{transition:none!important;animation:none!important}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important
+  }
 }
 
 
@@ -139,7 +453,8 @@ a{color:inherit}
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 400px; /* ajuste conforme suas imagens */
+  height: 400px;
+  /* ajuste conforme suas imagens */
 }
 
 .carousel-track {
@@ -159,7 +474,7 @@ a{color:inherit}
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   font-size: 2rem;
@@ -171,6 +486,7 @@ a{color:inherit}
 .carousel-btn.prev {
   left: 10px;
 }
+
 .carousel-btn.next {
   right: 10px;
 }
@@ -196,11 +512,154 @@ a{color:inherit}
 
 .carousel-dots .dot.active {
   opacity: 1;
-  background: #ff4081; /* cor de destaque */
+  background: #ff4081;
+  /* cor de destaque */
 }
 
 /* Ocultar navegação em <=400px */
-@media (max-width:400px){
-  .desktop-nav, .hero-nav { display:none !important; }
+@media (max-width:400px) {
+
+  .desktop-nav,
+  .hero-nav {
+    display: none !important;
+  }
 }
 
+
+
+
+
+/* ---------- BACKGROUND GERAL (por trás de todo o site) ---------- */
+body {
+  position: relative;
+  /* necessário para o pseudo-elemento */
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #f6f5f3;
+  /* fallback discreto caso a imagem demore */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0; */
+  z-index: -1;
+  /* sempre atrás do conteúdo */
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
+    url("imagens/fundo-geral.jpg");
+  /* <--- troque aqui pelo caminho real */
+  background-size: cover;
+  /* cobre toda a viewport */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* efeito "fundo imóvel" no desktop */
+  filter: saturate(.95) contrast(.98);
+  transition: opacity .35s ease;
+  opacity: 1;
+}
+
+/* ---------- Painel central (conteúdo no estilo 'mockup mobile' ) ---------- */
+.page-content {
+  max-width: 60%;
+  /* largura do painel central (ajuste se necessário) */
+  margin: 40px auto;
+  /* espaçamento superior e centralização */
+  background: #fff;
+  /* painel branco */
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  /* garante que fique na frente do ::before */
+}
+
+/* se preferir o painel grudado ao topo (tipo mockup de celular), reduza margin */
+@media (min-width: 1200px) {
+  .page-content {
+    margin-top: 80px;
+  }
+}
+
+/* ---------- Ajustes para mobile (onde background fixed costuma ser problemático) ---------- */
+@media (max-width: 767px) {
+  body::before {
+    /* Em telas pequenas o background fixo pode travar; usamos comportamento estático e menos contraste */
+    position: fixed;
+    /* ainda fixo mas... */
+    background-attachment: scroll;
+    background-position: center top;
+    filter: saturate(.9) contrast(.95) blur(0.4px);
+    opacity: 0.85;
+  }
+
+  /* caso queira esconder totalmente o fundo no mobile (opção mais leve):
+  body::before { display: none; }
+  */
+
+  /* Painel ocupa quase toda a largura em telas pequenas */
+  .page-content {
+    max-width: 95%;
+    margin: 18px auto;
+    border-radius: 12px;
+  }
+}
+
+/* ---------- Legibilidade: se o texto do site ficar difícil de ler, aumente o overlay ---------- */
+/* Exemplo: tornar o fundo mais escuro para melhor contraste */
+.bg-mais-escuro body::before {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)), url("imagens/site-bg.jpg");
+}
+
+/* ---------- Dica: se você já tiver containers que definem largura, ajuste o seletor .page-content para seu wrapper real (ex.: .container.narrow) ---------- */
+
+/* small phones */
+
+
+
+@media (max-width: 400px) {
+  .about .about-grid {
+    display: block !important; /* cancela o grid */
+  }
+
+  .about .about-right {
+    margin-bottom: 16px; /* espaçamento entre imagem e texto */
+  }
+}
+
+
+@media (max-width:600px) {
+  .page-content {
+    max-width: 70%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .about .about-grid {
+    display: block !important; /* cancela o grid */
+  }
+
+  .about .about-right {
+    margin-bottom: 16px; /* espaçamento entre imagem e texto */
+  }
+}
+
+
+@media (max-width:768px) {
+  .page-content {
+    max-width: 60%;
+  }
+}
+
+
+
+@media (max-width:400px) {
+  .page-content {
+    max-width: 75%;
+  }
+}
