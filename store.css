@@ -298,5 +298,75 @@
   }
 }
 
+/* --- Store: imagem ao lado do texto (desktop) e empilha no mobile --- */
+.store-card-inner {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* texto ocupa o espaço disponível */
+.store-card-text {
+  flex: 1 1 420px;
+  min-width: 220px;
+}
+
+/* área da imagem */
+.store-media {
+  flex: 0 0 360px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(210,198,190,0.6);
+  background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(250,247,245,0.7));
+  box-shadow: 0 14px 36px -18px rgba(60,45,35,0.12);
+  isolation: isolate;
+}
+
+/* imagem interna */
+.store-media-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  transition: transform .85s ease, filter .55s ease;
+  filter: saturate(1.03) contrast(1.01);
+}
+
+/* hover suave (desktop) */
+.store-media:hover .store-media-img {
+  transform: scale(1.035);
+  filter: saturate(1.12) contrast(1.03);
+}
+
+/* badge sobre a imagem */
+.media-badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: rgba(255,255,255,0.94);
+  color: #8d7f74;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: .85rem;
+  box-shadow: 0 6px 18px -8px rgba(80,60,50,0.12);
+}
+
+/* responsivo: empilha (imagem acima do texto) para engajar no mobile */
+@media (max-width: 780px) {
+  .store-card-inner {
+    flex-direction: column-reverse; /* imagem aparece primeiro */
+    gap: 1rem;
+  }
+  .store-media {
+    width: 100%;
+    flex: 0 0 auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+  }
+}
 
 

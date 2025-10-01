@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="hero.css">
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="store.css">
+  <link rel="stylesheet" href="modal.css">
   <!-- ...existing code... -->
 
 </head>
@@ -70,7 +71,7 @@
           </header>
           <p class="about-intro">Maquiadora profissional desde 2013 focada em criação de looks de alto impacto, noivas e direção de imagem.</p>
           <div class="about-actions-minimal">
-            <a href="#works" class="about-btn slim" aria-label="Ver portfólio">SAIBA MAIS</a>
+            <button class="about-btn slim" aria-label="Ver mais sobre a história" data-modal="aboutModal">SAIBA MAIS</button>
             <a href="#services" class="about-btn outline slim" aria-label="Ver serviços">SERVIÇOS</a>
           </div>
         </div>
@@ -117,65 +118,64 @@
     </section>
 
     <!-- SERVIÇOS -->
-    <section id="services" class="section services panel-section">
-      <div class="services-hero" style="background-image:url('imagens/services.jpg')">
+    <section id="services" class="section services services-premium panel-section">
+      <div class="services-hero" style="background-image:url('imag')">
         <div class="services-overlay"></div>
         <div class="container">
           <header class="services-header">
             <h2 class="section-title">SERVIÇOS</h2>
-            <p class="lead">Atendimento personalizado para eventos, editoriais, noivas e aperfeiçoamento profissional.</p>
+            <p class="section-lead">Atendimento personalizado para ocasiões especiais, editoriais e workshops.</p>
           </header>
 
           <div class="services-grid" role="list">
-            <article class="service-card" role="listitem">
-              <div class="service-icon" aria-hidden="true">💍</div>
-              <h3 class="service-title">Noivas Premium</h3>
-              <p class="service-desc">Consultoria completa + prova técnica + look final resistente à fotografia e longa
-                duração.</p>
-              <ul class="service-tags">
-                <li>Skin Prep</li>
-                <li>Airbrush</li>
-                <li>Prova</li>
-              </ul>
-              <button class="service-cta" aria-label="Agendar maquiagem para noiva">SAIBA MAIS</button>
+            <article class="service-card" role="listitem" style="--card-photo:url('imagens/noiva.jpeg')">
+              <span class="card-bg" aria-hidden="true"></span>
+              <div class="service-content">
+                <h3 class="service-title">Noivas Premium</h3>
+               
+                <ul class="service-tags">
+                  <li>Skin Prep</li><li>Airbrush</li><li>Prova</li>
+                </ul>
+                <a href="pdf/noivas.pdf" download="Noivas-Premium-Makeup.pdf" class="service-cta" aria-label="Baixar informações sobre maquiagem para noiva">SAIBA MAIS</a>
+              </div>
             </article>
 
-            <article class="service-card" role="listitem">
-              <div class="service-icon" aria-hidden="true">📸</div>
-              <h3 class="service-title">Editorial & Fashion</h3>
-              <p class="service-desc">Construção de conceito visual para campanhas, revistas e produção de moda.</p>
-              <ul class="service-tags">
-                <li>Conceito</li>
-                <li>Alta Definição</li>
-                <li>Correções</li>
-              </ul>
-              <button class="service-cta" aria-label="Solicitar serviço editorial">SAIBA MAIS</button>
+            <article class="service-card" role="listitem" style="--card-photo:url('imagens/portfolio.jpeg')">
+              <span class="card-bg" aria-hidden="true"></span>
+              <div class="service-content">
+                <h3 class="service-title">Portfólio</h3>
+             
+                <ul class="service-tags">
+                  <li>Conceito</li><li>Alta Definição</li><li>Correções</li>
+                </ul>
+                <a href="pdf/portofolio.pdf" download="Portfolio-Editorial-Makeup.pdf" class="service-cta" aria-label="Baixar informações sobre portfólio editorial">SAIBA MAIS</a>
+              </div>
             </article>
 
-            <article class="service-card" role="listitem">
-              <div class="service-icon" aria-hidden="true">🎓</div>
-              <h3 class="service-title">Workshops</h3>
-              <p class="service-desc">Aulas individuais ou grupos reduzidos para aperfeiçoar técnicas profissionais.</p>
-              <ul class="service-tags">
-                <li>Presencial</li>
-                <li>Online</li>
-                <li>Material</li>
-              </ul>
-              <button class="service-cta" aria-label="Inscrever-se em workshop">SAIBA MAIS</button>
+            <article class="service-card" role="listitem" style="--card-photo:url('imagens/card-workshop.jpg')">
+              <span class="card-bg" aria-hidden="true"></span>
+              <div class="service-content">
+                <h3 class="service-title">Workshops</h3>
+             
+                <ul class="service-tags">
+                  <li>Presencial</li><li>Online</li><li>Material</li>
+                </ul>
+                <button class="service-cta" aria-label="Inscrever-se em workshop">SAIBA MAIS</button>
+              </div>
             </article>
 
-            <article class="service-card" role="listitem">
-              <div class="service-icon" aria-hidden="true">💡</div>
-              <h3 class="service-title">Consultoria de Imagem</h3>
-              <p class="service-desc">Análise de estilo, cores adequadas, montagem de looks e rotina de beleza otimizada.
-              </p>
-              <ul class="service-tags">
-                <li>Colorimetria</li>
-                <li>Rosto</li>
-                <li>Produtos</li>
-              </ul>
-              <button class="service-cta" aria-label="Agendar consultoria de imagem">SAIBA MAIS</button>
+            <article class="service-card" role="listitem" style="--card-photo:url('imagens/card-consultoria.jpg')">
+              <span class="card-bg" aria-hidden="true"></span>
+              <div class="service-content">
+                <h3 class="service-title">Consultoria de Imagem</h3>
+             
+                <ul class="service-tags">
+                  <li>Colorimetria</li><li>Rosto</li><li>Produtos</li>
+                </ul>
+                <button class="service-cta" aria-label="Agendar consultoria de imagem">SAIBA MAIS</button>
+              </div>
             </article>
+
           </div>
 
           <div class="services-footer">
@@ -196,8 +196,8 @@
         </header>
         <div class="store-grid">
           <article class="store-card highlight">
-            <h3 class="store-card-title">Seleção MAC Cosmetics</h3>
-            <p class="store-text">Acesse a linha completa de bases, iluminadores, batons icônicos e ferramentas que
+            <h3 class="store-card-title">Seleção MAC</h3>
+            <p class="store-text">Acesse a linha de bases, iluminadores, batons icônicos, ferramentas que
               utilizo nos atendimentos e editoriais.</p>
             <ul class="store-bullets" aria-label="Principais benefícios">
               <li>Texturas de alta definição</li>
@@ -254,6 +254,30 @@
     </section>
   </main>
 
+  <!-- MODAL SOBRE -->
+  <div id="aboutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-container">
+      <button class="modal-close" data-close-modal aria-label="Fechar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="modal-content">
+        <header class="modal-header">
+          <span class="modal-index">01</span>
+          <h2 id="modalTitle" class="modal-title">MINHA HISTÓRIA</h2>
+          <div class="modal-underline" aria-hidden="true"></div>
+        </header>
+        <div class="modal-body">
+          <p>Na <strong>Lu Moraes Makeup</strong>, acreditamos que a maquiagem vai além da beleza. Ela é sobre revelar a identidade, valorizar a essência e transformar momentos em memórias inesquecíveis.</p>
+          <p>Com um olhar refinado e técnicas que unem naturalidade e elegância, Lu Moraes oferece uma experiência exclusiva, feita para mulheres que desejam se sentir únicas em cada detalhe.</p>
+          <p>Aqui, cada cliente é recebida com cuidado e dedicação, porque entendemos que maquiagem não é apenas sobre aparência: é sobre <em>confiança, emoção e presença</em>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer" role="contentinfo">
     <div class="footer-top">
       <div class="footer-grid container">
@@ -304,10 +328,7 @@
 
   <script>document.getElementById('yearCopy').textContent = new Date().getFullYear();</script>
   <script src="script.js"></script>
-
-
-
-  
+  <script src="modal.js"></script>
 </body>
 
 </html>

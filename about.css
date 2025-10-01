@@ -196,9 +196,41 @@ body,
   transform: translateY(0) scale(.95);
 }
 
+.about-minimal .about-btn.slim {
+  text-decoration: none;
+  font-size: .62rem;
+  letter-spacing: .32em;
+  font-weight: 600;
+  padding: .85rem 1.5rem .75rem;
+  border-radius: 60px;
+  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  color: #fff;
+  border: none !important; /* Remove a borda preta */
+  box-shadow: 0 10px 26px -12px rgba(170, 130, 110, .45);
+  transition: .55s cubic-bezier(.66, .01, .27, 1);
+}
+
+.about-minimal .about-btn.slim:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+  border: none !important; /* Garante que não apareça no hover */
+}
+
+.about-minimal .about-btn.slim:active {
+  transform: translateY(0) scale(.94);
+  border: none !important; /* Garante que não apareça no active */
+}
+
+/* Adiciona regra específica para remover borda de todos os botões about */
+.about-btn {
+  border: none !important;
+  outline: none;
+}
+
 .about-btn:focus-visible {
-  outline: 2px solid #d7a59d;
+  outline: 2px solid #d7a59d !important; /* Mantém apenas o outline de acessibilidade */
   outline-offset: 3px;
+  border: none !important;
 }
 
 .about-media {
@@ -353,6 +385,7 @@ body,
   border-radius: 60px;
   background: linear-gradient(135deg, #d7a59d, #c2b8b0);
   color: #fff;
+  border: none !important; /* Remove a borda preta */
   box-shadow: 0 10px 26px -12px rgba(170, 130, 110, .45);
   transition: .55s cubic-bezier(.66, .01, .27, 1);
 }
@@ -360,25 +393,12 @@ body,
 .about-minimal .about-btn.slim:hover {
   transform: translateY(-4px);
   filter: brightness(1.05);
+  border: none !important; /* Garante que não apareça no hover */
 }
 
 .about-minimal .about-btn.slim:active {
   transform: translateY(0) scale(.94);
-}
-
-.about-minimal .about-btn.outline.slim {
-  background: linear-gradient(135deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, .55));
-  color: #4b423d;
-  border: 1px solid #c2b8b0;
-}
-
-.about-minimal .about-btn.outline.slim:hover {
-  background: linear-gradient(135deg, #fff, #f6f2ef);
-}
-
-.about-minimal .about-btn:focus-visible {
-  outline: 2px solid #d7a59d;
-  outline-offset: 3px;
+  border: none !important; /* Garante que não apareça no active */
 }
 
 /* Divisor inferior para separar do PASSOS */
@@ -507,7 +527,7 @@ body,
   height: 100%;
   aspect-ratio: inherit;
   object-fit: cover;
-  object-position: center 55%;
+  object-position: center 40%;
   display: block;
 }
 
@@ -625,3 +645,4 @@ body,
     border-radius: 8px; /* 50% se quiser avatar redondo */
   }
 }
+
