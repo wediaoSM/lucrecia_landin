@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Makeup — Landing</title>
+  <title> WM - Makeup</title>
 
   <!-- Fonts -->
   <link
@@ -22,7 +22,65 @@
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="store.css">
   <link rel="stylesheet" href="modal.css">
-  <!-- ...existing code... -->
+  <!-- override de cores do modal -->
+  <style>
+    /* Paleta marrom claro */
+    :root {
+      --modal-brown-lite: #c2b8b0;
+      --modal-brown-mid: #b49a88;
+      --modal-brown-deep: #9b8272;
+      --modal-brown-track: #f4efec;
+    }
+
+    /* Scrollbar (Firefox) */
+    .modal-content,
+    .modal-body {
+      scrollbar-color: var(--modal-brown-mid) var(--modal-brown-track);
+    }
+
+    /* Scrollbar (WebKit) */
+    .modal-content::-webkit-scrollbar,
+    .modal-body::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .modal-content::-webkit-scrollbar-track,
+    .modal-body::-webkit-scrollbar-track {
+      background: var(--modal-brown-track);
+      border-radius: 8px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb,
+    .modal-body::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--modal-brown-lite), var(--modal-brown-mid));
+      border: 2px solid var(--modal-brown-track);
+      border-radius: 12px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover,
+    .modal-body::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--modal-brown-mid), var(--modal-brown-deep));
+    }
+
+    /* Remove qualquer resquício de cor laranja anterior (ex: #d7a59d) dentro do modal */
+    .modal-index,
+    .modal-body strong,
+    .modal-body em {
+      color: var(--modal-brown-deep) !important;
+    }
+
+    .modal-body em {
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    /* Opcional: leve sublinhado decorativo na frase enfatizada */
+    .modal-body em {
+      text-decoration: underline 0.08em rgba(155, 130, 110, .35);
+      text-underline-offset: 3px;
+    }
+  </style>
 
 </head>
 
@@ -43,17 +101,17 @@
         <header class="topbar-desktop hero-topbar">
           <div class="brand desktop-brand hero-brand">
             <div class="logo-title">MAKEUP</div>
-            <div class="subtitle">EST • VISAGE</div>
+            <div class="subtitle"> BEAUTY</div>
           </div>
           <nav class="desktop-nav hero-nav" aria-label="navegação principal"></nav>
         </header>
 
-     <div class="hero-center">
-  <figure class="hero-logo-figure" aria-label="Logo da profissional">
-    <img src="imagens/logo.png" alt="Lu Moraes - logo" class="hero-logo" loading="lazy">
-  </figure>
+        <div class="hero-center">
+          <figure class="hero-logo-figure" aria-label="Logo da profissional">
+            <img src="imagens/logo.png" alt="Lu Moraes - logo" class="hero-logo" loading="lazy">
+          </figure>
 
- </div>
+        </div>
 
     </section>
 
@@ -66,12 +124,14 @@
         <div class="about-content">
           <header class="about-head">
             <span class="about-index">01</span>
-            <h2 class="about-title">MINHA HISTÓRIA</h2>
+            <h2 class="about-title">SOBRE MIM</h2>
             <div class="about-underline" aria-hidden="true"></div>
           </header>
-          <p class="about-intro">Maquiadora profissional desde 2013 focada em criação de looks de alto impacto, noivas e direção de imagem.</p>
+          <p class="about-intro">Maquiadora profissional desde 2013 focada em criação de looks de alto impacto, noivas e
+            direção de imagem.</p>
           <div class="about-actions-minimal">
-            <button class="about-btn slim" aria-label="Ver mais sobre a história" data-modal="aboutModal">SAIBA MAIS</button>
+            <button class="about-btn slim" aria-label="Ver mais sobre a história" data-modal="aboutModal">SAIBA
+              MAIS</button>
             <a href="#services" class="about-btn outline slim" aria-label="Ver serviços">SERVIÇOS</a>
           </div>
         </div>
@@ -122,21 +182,21 @@
       <div class="services-hero" style="background-image:url('imag')">
         <div class="services-overlay"></div>
         <div class="container">
-          <header class="services-header">
-            <h2 class="section-title">SERVIÇOS</h2>
-            <p class="section-lead">Atendimento personalizado para ocasiões especiais, editoriais e workshops.</p>
-          </header>
+
 
           <div class="services-grid" role="list">
             <article class="service-card" role="listitem" style="--card-photo:url('imagens/noiva.jpeg')">
               <span class="card-bg" aria-hidden="true"></span>
               <div class="service-content">
                 <h3 class="service-title">Noivas Premium</h3>
-               
+
                 <ul class="service-tags">
-                  <li>Skin Prep</li><li>Airbrush</li><li>Prova</li>
+                  <li>Skin Prep</li>
+                  <li>Airbrush</li>
+                  <li>Prova</li>
                 </ul>
-                <a href="pdf/noivas.pdf" download="Noivas-Premium-Makeup.pdf" class="service-cta" aria-label="Baixar informações sobre maquiagem para noiva">SAIBA MAIS</a>
+                <a href="pdf/noivas.pdf" download="Noivas-Premium-Makeup.pdf" class="service-cta"
+                  aria-label="Baixar informações sobre maquiagem para noiva">SAIBA MAIS</a>
               </div>
             </article>
 
@@ -144,21 +204,26 @@
               <span class="card-bg" aria-hidden="true"></span>
               <div class="service-content">
                 <h3 class="service-title">Portfólio</h3>
-             
+
                 <ul class="service-tags">
-                  <li>Conceito</li><li>Alta Definição</li><li>Correções</li>
+                  <li>Conceito</li>
+                  <li>Alta Definição</li>
+                  <li>Correções</li>
                 </ul>
-                <a href="pdf/portofolio.pdf" download="Portfolio-Editorial-Makeup.pdf" class="service-cta" aria-label="Baixar informações sobre portfólio editorial">SAIBA MAIS</a>
+                <a href="pdf/portofolio.pdf" download="Portfolio-Editorial-Makeup.pdf" class="service-cta"
+                  aria-label="Baixar informações sobre portfólio editorial">SAIBA MAIS</a>
               </div>
             </article>
 
-            <article class="service-card" role="listitem" style="--card-photo:url('imagens/card-workshop.jpg')">
+            <article class="service-card" role="listitem" style="--card-photo:url('imagens/automake.jpeg')">
               <span class="card-bg" aria-hidden="true"></span>
               <div class="service-content">
-                <h3 class="service-title">Workshops</h3>
-             
+                <h3 class="service-title">Curso de Auto Make</h3>
+
                 <ul class="service-tags">
-                  <li>Presencial</li><li>Online</li><li>Material</li>
+                  <li>Presencial</li>
+                  <li>Online</li>
+                  <li>Material</li>
                 </ul>
                 <button class="service-cta" aria-label="Inscrever-se em workshop">SAIBA MAIS</button>
               </div>
@@ -168,9 +233,11 @@
               <span class="card-bg" aria-hidden="true"></span>
               <div class="service-content">
                 <h3 class="service-title">Consultoria de Imagem</h3>
-             
+
                 <ul class="service-tags">
-                  <li>Colorimetria</li><li>Rosto</li><li>Produtos</li>
+                  <li>Colorimetria</li>
+                  <li>Rosto</li>
+                  <li>Produtos</li>
                 </ul>
                 <button class="service-cta" aria-label="Agendar consultoria de imagem">SAIBA MAIS</button>
               </div>
@@ -178,9 +245,7 @@
 
           </div>
 
-          <div class="services-footer">
-            <button class="about-btn primary-cta" aria-label="Entrar em contato para reservar">RESERVAR AGORA</button>
-          </div>
+
         </div>
       </div>
     </section>
@@ -195,15 +260,10 @@
             performance em foto e vídeo.</p>
         </header>
         <div class="store-grid">
-          <article class="store-card highlight">
+          <article class="store-card highlight store-card--with-bg store-card--compact"
+            style="--store-photo:url('imagens/store.jpeg')">
+            <div class="store-photo" aria-hidden="true"></div>
             <h3 class="store-card-title">Seleção MAC</h3>
-            <p class="store-text">Acesse a linha de bases, iluminadores, batons icônicos, ferramentas que
-              utilizo nos atendimentos e editoriais.</p>
-            <ul class="store-bullets" aria-label="Principais benefícios">
-              <li>Texturas de alta definição</li>
-              <li>Durabilidade para eventos longos</li>
-              <li>Acabamentos profissionais de pele</li>
-            </ul>
             <a class="store-cta" href="https://www.maccosmetics.com.br/" target="_blank" rel="noopener noreferrer"
               aria-label="Visitar loja MAC Cosmetics">IR PARA MAC COSMETICS ↗</a>
           </article>
@@ -230,17 +290,17 @@
         <div class="carousel theme-sand carousel-advanced" data-autoplay="true" data-interval="3000" data-effect="fade"
           data-progress="true" aria-roledescription="carrossel" tabindex="0">
           <div class="carousel-track">
-            <div class="slide" style="background-image:url('imagens/carrosel1.jpg')" role="img" aria-label="Trabalho 1">
-              <span class="caption">Trabalho 1</span>
+            <div class="slide" style="background-image:url('imagens/car1.jpeg')" role="img" aria-label="Trabalho 1">
+
             </div>
-            <div class="slide" style="background-image:url('imagens/carrosel2.jpg')" role="img" aria-label="Trabalho 2">
-              <span class="caption">Trabalho 2</span>
+            <div class="slide" style="background-image:url('imagens/car2.jpeg')" role="img" aria-label="Trabalho 2">
+
             </div>
-            <div class="slide" style="background-image:url('imagens/carrosel3.jpg')" role="img" aria-label="Trabalho 3">
-              <span class="caption">Trabalho 3</span>
+            <div class="slide" style="background-image:url('imagens/car3.jpeg')" role="img" aria-label="Trabalho 3">
+
             </div>
-            <div class="slide" style="background-image:url('imagens/carrosel4.jpg')" role="img" aria-label="Trabalho 4">
-              <span class="caption">Trabalho 4</span>
+            <div class="slide" style="background-image:url('imagens/car4.jpeg')" role="img" aria-label="Trabalho 4">
+
             </div>
           </div>
 
@@ -260,19 +320,22 @@
     <div class="modal-container">
       <button class="modal-close" data-close-modal aria-label="Fechar modal">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 6L6 18M6 6l12 12"/>
+          <path d="M18 6L6 18M6 6l12 12" />
         </svg>
       </button>
       <div class="modal-content">
         <header class="modal-header">
           <span class="modal-index">01</span>
-          <h2 id="modalTitle" class="modal-title">MINHA HISTÓRIA</h2>
+          <h2 id="modalTitle" class="modal-title">SOBRE MIM</h2>
           <div class="modal-underline" aria-hidden="true"></div>
         </header>
         <div class="modal-body">
-          <p>Na <strong>Lu Moraes Makeup</strong>, acreditamos que a maquiagem vai além da beleza. Ela é sobre revelar a identidade, valorizar a essência e transformar momentos em memórias inesquecíveis.</p>
-          <p>Com um olhar refinado e técnicas que unem naturalidade e elegância, Lu Moraes oferece uma experiência exclusiva, feita para mulheres que desejam se sentir únicas em cada detalhe.</p>
-          <p>Aqui, cada cliente é recebida com cuidado e dedicação, porque entendemos que maquiagem não é apenas sobre aparência: é sobre <em>confiança, emoção e presença</em>.</p>
+          <p>Na <strong>Lu Moraes Makeup</strong>, acreditamos que a maquiagem vai além da beleza. Ela é sobre revelar a
+            identidade, valorizar a essência e transformar momentos em memórias inesquecíveis.</p>
+          <p>Com um olhar refinado e técnicas que unem naturalidade e elegância, Lu Moraes oferece uma experiência
+            exclusiva, feita para mulheres que desejam se sentir únicas em cada detalhe.</p>
+          <p>Aqui, cada cliente é recebida com cuidado e dedicação, porque entendemos que maquiagem não é apenas sobre
+            aparência: é sobre <em>confiança, emoção e presença</em>.</p>
         </div>
       </div>
     </div>
@@ -304,8 +367,8 @@
           <h4 class="footer-title">Contato</h4>
           <ul class="footer-list">
             <li><span>Email:</span> contato@makeup.com</li>
-            <li><span>Fone:</span> (11) 99999-0000</li>
-            <li><span>Cidade:</span> São Paulo — SP</li>
+            <li><span>Fone:</span> (27) 99600-3604</li>
+            <li><span>Cidade:</span> Vitoria - ES</li>
           </ul>
         </div>
         <div class="footer-col newsletter">

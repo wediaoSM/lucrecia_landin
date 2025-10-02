@@ -30,10 +30,10 @@
 
 .store-title {
     margin: 0;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
-    letter-spacing: .02em;
-    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.4rem, 3.8vw, 2.8rem);
+    letter-spacing: .04em;
+    font-weight: 800;
     color: #352d2a;
     line-height: .95;
 }
@@ -70,6 +70,66 @@
     background: radial-gradient(circle at 22% 18%, rgba(255, 255, 255, .9), transparent 60%), radial-gradient(circle at 80% 78%, rgba(215, 165, 157, .6), transparent 65%);
     mix-blend-mode: soft-light;
     pointer-events: none;
+}
+
+.store-card--with-bg {
+    position: relative;
+    overflow: hidden;
+    background: none !important;
+}
+
+.store-card--with-bg .store-photo {
+    position: absolute;
+    inset: 0;
+    background: var(--store-photo, url('imagens/store.jpeg')) center/cover no-repeat;
+    filter: brightness(.55) saturate(.9) contrast(1.08) blur(1.5px);
+    opacity: .60;
+    transition: .6s ease;
+}
+
+.store-card--with-bg:hover .store-photo {
+    transform: scale(1.04);
+    filter: brightness(.6) saturate(1) contrast(1.1) blur(1.2px);
+    opacity: .62;
+}
+
+.store-card--with-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, .08) 0%,
+            rgba(255, 255, 255, .18) 45%,
+            rgba(255, 255, 255, .28) 100%);
+    backdrop-filter: none;
+    /* remove blur que “lava” a foto */
+    pointer-events: none;
+    mix-blend-mode: normal;
+}
+
+.store-card--with-bg>*:not(.store-photo) {
+    position: relative;
+    z-index: 2;
+}
+
+.store-card--with-bg .store-card-title,
+.store-card--with-bg .store-text,
+.store-card--with-bg .store-bullets li {
+    color: #2a2422;
+}
+
+.store-card--with-bg .store-bullets li::before {
+    box-shadow: 0 0 0 4px rgba(215, 165, 157, .22);
+}
+
+/* botão levemente mais destacado sobre fundo fosco */
+.store-card--with-bg .store-cta {
+    box-shadow: 0 10px 26px -14px rgba(120, 70, 50, .28);
+}
+
+.store-card--with-bg .store-cta:hover {
+    transform: translateY(-4px);
 }
 
 .store-card-title {
@@ -118,10 +178,13 @@
 }
 
 .store-cta {
-    align-self: center;      /* centraliza no eixo cruzado do flex */
-    margin: 0 auto;          /* garante centralização horizontal */
+    align-self: center;
+    /* centraliza no eixo cruzado do flex */
+    margin: 0 auto;
+    /* garante centralização horizontal */
     text-decoration: none;
-    font-size: .58rem;       /* levemente menor */
+    font-size: .58rem;
+    /* levemente menor */
     letter-spacing: .32em;
     font-weight: 600;
     padding: .8rem 1.4rem .72rem;
@@ -284,89 +347,562 @@
 
 /* Override apenas para telas pequenas (<= 400px) */
 @media (max-width: 400px) {
-  /* garante que o card tenha referencia para posicionamento absoluto se precisar */
-  .store-card {
-    position: relative;
-  }
 
-  /* opção padrão: mantém o botão no fluxo (flex) e faz um "nudge" para a esquerda */
-  .store-cta {
-    align-self: center;       /* centraliza horizontalmente dentro do card */
-    margin-left: 0;
-    transform: translateX(-20px); /* desfaze para a esquerda  — ajuste o valor (-8px / -20px) conforme quiser */
-    position: static;         /* garante que volte ao fluxo (caso tenha sido absoluto antes) */
-  }
+    /* garante que o card tenha referencia para posicionamento absoluto se precisar */
+    .store-card {
+        position: relative;
+    }
+
+    /* opção padrão: mantém o botão no fluxo (flex) e faz um "nudge" para a esquerda */
+    .store-cta {
+        align-self: center;
+        /* centraliza horizontalmente dentro do card */
+        margin-left: 0;
+        transform: translateX(-20px);
+        /* desfaze para a esquerda  — ajuste o valor (-8px / -20px) conforme quiser */
+        position: static;
+        /* garante que volte ao fluxo (caso tenha sido absoluto antes) */
+    }
 }
 
 /* --- Store: imagem ao lado do texto (desktop) e empilha no mobile --- */
 .store-card-inner {
-  display: flex;
-  gap: 1.6rem;
-  align-items: center;
-  flex-wrap: nowrap;
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 /* texto ocupa o espaço disponível */
 .store-card-text {
-  flex: 1 1 420px;
-  min-width: 220px;
+    flex: 1 1 420px;
+    min-width: 220px;
 }
 
 /* área da imagem */
 .store-media {
-  flex: 0 0 360px;
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(210,198,190,0.6);
-  background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(250,247,245,0.7));
-  box-shadow: 0 14px 36px -18px rgba(60,45,35,0.12);
-  isolation: isolate;
+    flex: 0 0 360px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(210, 198, 190, 0.6);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(250, 247, 245, 0.7));
+    box-shadow: 0 14px 36px -18px rgba(60, 45, 35, 0.12);
+    isolation: isolate;
 }
 
 /* imagem interna */
 .store-media-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 4 / 5;
-  transition: transform .85s ease, filter .55s ease;
-  filter: saturate(1.03) contrast(1.01);
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+    transition: transform .85s ease, filter .55s ease;
+    filter: saturate(1.03) contrast(1.01);
 }
 
 /* hover suave (desktop) */
 .store-media:hover .store-media-img {
-  transform: scale(1.035);
-  filter: saturate(1.12) contrast(1.03);
+    transform: scale(1.035);
+    filter: saturate(1.12) contrast(1.03);
 }
 
 /* badge sobre a imagem */
 .media-badge {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  background: rgba(255,255,255,0.94);
-  color: #8d7f74;
-  padding: 6px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: .85rem;
-  box-shadow: 0 6px 18px -8px rgba(80,60,50,0.12);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #8d7f74;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: .85rem;
+    box-shadow: 0 6px 18px -8px rgba(80, 60, 50, 0.12);
 }
 
 /* responsivo: empilha (imagem acima do texto) para engajar no mobile */
 @media (max-width: 780px) {
-  .store-card-inner {
-    flex-direction: column-reverse; /* imagem aparece primeiro */
-    gap: 1rem;
-  }
-  .store-media {
-    width: 100%;
-    flex: 0 0 auto;
-    aspect-ratio: 4 / 3;
-    border-radius: 18px;
-  }
+    .store-card-inner {
+        flex-direction: column-reverse;
+        /* imagem aparece primeiro */
+        gap: 1rem;
+    }
+
+    .store-media {
+        width: 100%;
+        flex: 0 0 auto;
+        aspect-ratio: 4 / 3;
+        border-radius: 18px;
+    }
 }
 
+/* ===== FIX LAYOUT MOBILE (≤560px) ===== */
+@media (max-width:560px) {
+    .store-wrapper {
+        padding-left: clamp(.8rem, 4vw, 1.2rem);
+        padding-right: clamp(.8rem, 4vw, 1.2rem);
+    }
 
+    .store-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    .store-card,
+    .store-card--with-bg {
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 24px;
+        padding: clamp(1.4rem, 5vw, 1.9rem) clamp(1.2rem, 5vw, 1.7rem);
+    }
+
+    /* Foto mais nítida e sem blur no mobile, evitando sensação de “corte” */
+    .store-card--with-bg .store-photo {
+        filter: brightness(.9) saturate(1.05) contrast(1.06) !important;
+        opacity: .9 !important;
+        transform: none !important;
+    }
+
+    /* Desativa zoom no hover (gestos tocam e causam reflow) */
+    .store-card--with-bg:hover .store-photo {
+        transform: none !important;
+    }
+}
+
+/* ===== /FIX ===== */
+
+/* Ajuste extra para telas muito pequenas (≤400px) para garantir respiro lateral */
+@media (max-width:400px) {
+
+    .store-card,
+    .store-card--with-bg {
+        padding: clamp(1.2rem, 5.5vw, 1.6rem) clamp(1rem, 5.5vw, 1.4rem);
+        border-radius: 20px;
+    }
+}
+
+/* ==== FIX VISIBILIDADE IMAGEM (Seleção MAC) ==== */
+.store-card--with-bg::after {
+    /* overlay muito forte antes; agora bem mais leve */
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, .08) 0%,
+            rgba(255, 255, 255, .18) 45%,
+            rgba(255, 255, 255, .28) 100%);
+    backdrop-filter: none;
+    /* remove blur que “lava” a foto */
+}
+
+.store-card--with-bg .store-photo {
+    opacity: .78;
+    /* antes ~0.42 / 0.60 */
+    filter: brightness(.9) saturate(1.02) contrast(1.05);
+    transition: .6s ease;
+}
+
+.store-card--with-bg:hover .store-photo {
+    opacity: .85;
+    filter: brightness(.95) saturate(1.05) contrast(1.08);
+    transform: scale(1.03);
+}
+
+/* Aplicar uma pequena “placa” translúcida atrás do conteúdo para leitura */
+.store-card--with-bg .store-card-title,
+.store-card--with-bg .store-text,
+.store-card--with-bg .store-bullets,
+.store-card--with-bg .store-cta {
+    position: relative;
+    z-index: 2;
+}
+
+.store-card--with-bg .store-card-title,
+.store-card--with-bg .store-text,
+.store-card--with-bg .store-bullets {
+    background: rgba(255, 255, 255, .55);
+    padding: .55rem .85rem;
+    border-radius: 14px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.store-card--with-bg .store-bullets {
+    padding: .7rem .9rem .6rem;
+}
+
+.store-card--with-bg .store-bullets li {
+    color: #2f2724;
+}
+
+.store-card--with-bg .store-card-title {
+    font-weight: 700;
+    color: #2a211f;
+}
+
+.store-card--with-bg .store-text {
+    color: #3d332f;
+}
+
+/* Botão: destaque sem exagero */
+.store-card--with-bg .store-cta {
+    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    box-shadow: 0 8px 22px -12px rgba(90, 50, 40, .35);
+    margin-top: .4rem;
+}
+
+.store-card--with-bg .store-cta:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.06);
+}
+
+/* Ajuste de espaçamento do card após blocos com fundo */
+.store-card--with-bg {
+    gap: .9rem;
+    padding-top: clamp(1.6rem, 2vw, 2.1rem);
+}
+
+/* Em telas menores: reduzir placas para não pesar */
+@media (max-width:640px) {
+
+    .store-card--with-bg .store-card-title,
+    .store-card--with-bg .store-text,
+    .store-card--with-bg .store-bullets {
+        background: rgba(255, 255, 255, .65);
+        padding: .5rem .7rem;
+    }
+
+    .store-card--with-bg .store-photo {
+        opacity: .82;
+        filter: brightness(.94) saturate(1.05) contrast(1.06);
+    }
+}
+
+/* Caso queira versão quase sem overlay (pode aplicar class extra no futuro) */
+.store-card--with-bg.store-bg-lite::after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .04) 0%, rgba(255, 255, 255, .12) 100%);
+}
+
+/* === Overlay escuro estilo hero para card com fundo === */
+.store-card--with-bg::after {
+    /* substitui o gradiente claro anterior */
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, .34) 0%,
+            rgba(0, 0, 0, .46) 55%,
+            rgba(0, 0, 0, .58) 100%) !important;
+    z-index: 1;
+    opacity: 1;
+}
+
+/* Reiluminar a foto base (já que agora escurecemos por cima) */
+.store-card--with-bg .store-photo {
+    opacity: .95;
+    filter: brightness(.98) saturate(1.08) contrast(1.08);
+}
+
+/* Remover placas translúcidas anteriores e deixar texto direto sobre o overlay escuro */
+.store-card--with-bg .store-card-title,
+.store-card--with-bg .store-text,
+.store-card--with-bg .store-bullets {
+    background: transparent !important;
+    padding: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    color: #fff;
+}
+
+/* Ajuste fino de cores individuais */
+.store-card--with-bg .store-card-title {
+    color: #ffffff;
+}
+
+.store-card--with-bg .store-text {
+    color: #e8e3e1;
+}
+
+.store-card--with-bg .store-bullets li {
+    color: #f1eeec;
+}
+
+.store-card--with-bg .store-bullets li::before {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .22);
+}
+
+/* Botão com sombra adequada sobre fundo escuro */
+.store-card--with-bg .store-cta {
+    box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .55), 0 4px 12px -4px rgba(0, 0, 0, .4);
+}
+
+.store-card--with-bg .store-cta:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.08);
+}
+
+/* Hover: leve zoom + sutil clareamento */
+.store-card--with-bg:hover .store-photo {
+    transform: scale(1.03);
+    filter: brightness(1.03) saturate(1.1) contrast(1.1);
+}
+
+/* Mobile: não deixar escurecer demais em telas pequenas */
+@media (max-width:600px) {
+    .store-card--with-bg::after {
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, .30) 0%,
+                rgba(0, 0, 0, .44) 60%,
+                rgba(0, 0, 0, .55) 100%) !important;
+    }
+
+    .store-card--with-bg .store-photo {
+        opacity: .92;
+    }
+}
+
+/* Extra: classe opcional para versão mais suave se quiser testar depois */
+.store-card--with-bg.bg-soft-dark::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .4) 100%) !important;
+}
+
+/* === FIX BOTÃO SELEÇÃO MAC (texto empacotado) === */
+/* Base: centraliza conteúdo e permite quebra equilibrada */
+.store-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    max-width: 100%;
+    line-height: 1.25;
+    letter-spacing: .26em;
+    /* reduz um pouco para caber melhor */
+    white-space: normal;
+    text-wrap: balance;
+    padding: .9rem 1.6rem .82rem;
+}
+
+/* Dentro do card com fundo aplica largura total para preencher a pílula */
+.store-card--with-bg .store-cta {
+    width: 100%;
+}
+
+/* Remove o translate aplicado no override ≤400px anterior */
+@media (max-width:500px) {
+    .store-cta {
+        transform: none !important;
+        width: 100%;
+        font-size: .62rem;
+        letter-spacing: .28em;
+        border-radius: 50px;
+    }
+}
+
+/* Muito pequeno: reduz padding para evitar quebra precoce nas primeiras letras */
+@media (max-width:360px) {
+    .store-cta {
+        padding: .75rem 1.2rem .7rem;
+        letter-spacing: .24em;
+    }
+}
+
+/* === /FIX BOTÃO === */
+
+/* === FIX BOTÃO (forçar uma linha) === */
+.store-cta {
+    /* ...existing code... */
+    white-space: nowrap !important;
+    flex-wrap: nowrap;
+    text-wrap: initial;
+    overflow: hidden;
+    text-overflow: clip;
+    letter-spacing: .26em;
+}
+
+.store-card--with-bg .store-cta {
+    /* mantém largura total sem quebrar linha */
+    width: 100%;
+    white-space: nowrap;
+}
+
+/* Ajustes responsivos para evitar quebra/estouro */
+@media (max-width:500px) {
+    .store-cta {
+        font-size: .55rem !important;
+        letter-spacing: .22em;
+        padding: .75rem 1.2rem .65rem;
+    }
+}
+
+@media (max-width:380px) {
+    .store-cta {
+        font-size: .5rem !important;
+        letter-spacing: .20em;
+    }
+}
+
+/* === /FIX BOTÃO === */
+
+/* ===== Store card compacto: título acima do botão, centralizado ===== */
+.store-card--with-bg.store-card--compact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding-top: clamp(2rem, 5vw, 2.8rem);
+    padding-bottom: clamp(1.6rem, 4vw, 2.4rem);
+    gap: .75rem;
+}
+
+.store-card--with-bg.store-card--compact .store-card-title {
+    margin: 0 0 .4rem;
+    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+    letter-spacing: .08em;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 6px 22px rgba(0, 0, 0, .55);
+}
+
+.store-card--with-bg.store-card--compact .store-cta {
+    width: auto;
+    min-width: 240px;
+    padding: .85rem 1.8rem .78rem;
+    letter-spacing: .26em;
+}
+
+.store-card--with-bg.store-card--compact .store-text,
+.store-card--with-bg.store-card--compact .store-bullets {
+    display: none !important;
+}
+
+/* Ajuste mobile para não colar nas bordas */
+@media (max-width:560px) {
+    .store-card--with-bg.store-card--compact {
+        padding-top: 2.2rem;
+        padding-bottom: 2rem;
+    }
+
+    .store-card--with-bg.store-card--compact .store-card-title {
+        font-size: clamp(1.6rem, 7vw, 2rem);
+    }
+
+    .store-card--with-bg.store-card--compact .store-cta {
+        min-width: 200px;
+        font-size: .54rem;
+        letter-spacing: .22em;
+    }
+}
+
+/* Altura ampliada do card compacto com fundo */
+.store-card--with-bg.store-card--compact {
+    min-height: clamp(420px, 58vh, 560px);
+    /* antes só dependia do conteúdo */
+    justify-content: flex-end;
+    padding-top: clamp(2.8rem, 6vh, 3.6rem);
+    /* mais respiro acima */
+}
+
+/* Ajuste para telas médias: evita exagero */
+@media (max-width:900px) {
+    .store-card--with-bg.store-card--compact {
+        min-height: clamp(380px, 60vh, 500px);
+    }
+}
+
+/* Mobile: mantém boa porção da imagem sem ficar excessivo */
+@media (max-width:560px) {
+    .store-card--with-bg.store-card--compact {
+        min-height: 420px;
+        padding-top: 2.2rem;
+    }
+}
+
+/* Muito pequeno: reduz levemente */
+@media (max-width:400px) {
+    .store-card--with-bg.store-card--compact {
+        min-height: 380px;
+        padding-top: 2rem;
+    }
+}
+
+/* Título Seleção MAC mais fino e clean */
+.store-card--compact .store-card-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 300;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-size: clamp(1.2rem, 2.6vw, 2rem);
+    line-height: 1.05;
+    font-style: normal;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, .45));
+}
+
+/* Ajuste mobile: evita ficar grande demais */
+@media (max-width:560px) {
+    .store-card--compact .store-card-title {
+        font-size: clamp(1.1rem, 5.4vw, 1.55rem);
+        letter-spacing: .2em;
+    }
+}
+
+/* Ajuste: título compacto sem quebra e menor */
+.store-card--compact .store-card-title {
+    font-size: clamp(1.05rem, 2.2vw, 1.65rem) !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* se a largura for muito pequena evita quebrar */
+    letter-spacing: .16em;
+    font-weight: 300;
+}
+
+@media (max-width:560px) {
+    .store-card--compact .store-card-title {
+        font-size: clamp(.95rem, 5vw, 1.35rem) !important;
+        letter-spacing: .18em;
+    }
+}
+
+/* === Override: Botão marrom claro mesclado com bege === */
+.store-cta,
+.store-card--with-bg .store-cta {
+    background: linear-gradient(135deg,
+            #bfa793 0%,
+            #d7c7bb 52%,
+            #efe5df 100%);
+    color: #2f2724 !important;
+    box-shadow: 0 10px 28px -14px rgba(95, 70, 50, .35);
+    border: 1px solid rgba(85, 60, 40, .18);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .35);
+    transition: .55s cubic-bezier(.66, .01, .27, 1);
+}
+
+.store-cta:hover,
+.store-card--with-bg .store-cta:hover {
+    filter: brightness(1.07) saturate(1.05);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px -16px rgba(80, 55, 35, .38);
+}
+
+.store-cta:active,
+.store-card--with-bg .store-cta:active {
+    transform: translateY(-1px) scale(.96);
+    filter: brightness(0.98);
+}
+
+.store-cta:focus-visible,
+.store-card--with-bg .store-cta:focus-visible {
+    outline: 2px solid #cbb6a6;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(203, 182, 166, .35), 0 10px 26px -14px rgba(80, 55, 35, .35);
+}
+
+/* Mobile ajuste fino */
+@media (max-width:500px) {
+
+    .store-cta,
+    .store-card--with-bg .store-cta {
+        letter-spacing: .22em;
+    }
+}

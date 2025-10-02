@@ -2,7 +2,8 @@
 :root {
   --svc-bg-dark: #09090c;
   --svc-overlay: linear-gradient(135deg, #0b0b11 0%, #141420 55%, #1c0f18 100%);
-  --svc-accent: #8B4B3C; /* Cor mais próxima das letras */
+  --svc-accent: #8B4B3C;
+  /* Cor mais próxima das letras */
   --svc-accent-rgb: 139 75 60;
   --svc-radius: 26px;
   --svc-radius-sm: 16px;
@@ -88,7 +89,7 @@
   overflow: hidden;
   border-radius: 24px;
   background: #fff;
-  box-shadow: 
+  box-shadow:
     0 2px 8px rgba(122, 90, 70, .08),
     0 8px 24px rgba(122, 90, 70, .12);
   transition: all .5s cubic-bezier(.4, 0, .2, 1);
@@ -98,7 +99,7 @@
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 
+  box-shadow:
     0 8px 16px rgba(122, 90, 70, .14),
     0 16px 48px rgba(122, 90, 70, .18);
 }
@@ -116,21 +117,17 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0, 0, 0, .05) 40%,
-    rgba(0, 0, 0, .15) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(0, 0, 0, .05) 40%,
+      rgba(0, 0, 0, .15) 100%);
 }
 
 .service-card:hover .card-bg::after {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(139, 75, 60, .08) 40%,
-    rgba(139, 75, 60, .18) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(139, 75, 60, .08) 40%,
+      rgba(139, 75, 60, .18) 100%);
 }
 
 /* Conteúdo do card */
@@ -243,7 +240,7 @@
   color: #fff;
   border-color: #8B4B3C;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(139, 75, 60, .4),
     0 4px 12px rgba(139, 75, 60, .25),
     inset 0 1px 0 rgba(255, 255, 255, .1);
@@ -260,7 +257,7 @@
 
 .service-cta:active {
   transform: translateY(-1px) scale(.98);
-  box-shadow: 
+  box-shadow:
     0 4px 15px rgba(139, 75, 60, .3),
     inset 0 2px 4px rgba(0, 0, 0, .1);
 }
@@ -274,9 +271,9 @@
    Substitui o estilo anterior de .service-cta para algo mais sofisticado.
    Mantém o mesmo HTML. Colocar este bloco após o original para sobrescrever. */
 .service-cta {
-  --btn-grad: linear-gradient(135deg,#8B4B3C 0%,#B87463 50%,#8B4B3C 100%);
-  --btn-bg: rgba(255,255,255,.35);
-  --btn-bg-hover: rgba(255,255,255,.55);
+  --btn-grad: linear-gradient(135deg, #8B4B3C 0%, #B87463 50%, #8B4B3C 100%);
+  --btn-bg: rgba(255, 255, 255, .35);
+  --btn-bg-hover: rgba(255, 255, 255, .55);
   --btn-text: #632f23;
   --btn-radius: 18px;
   position: relative;
@@ -293,21 +290,21 @@
   line-height: 1;
   color: var(--btn-text);
   background:
-    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(#fff, #fff) padding-box,
     var(--btn-grad) border-box;
   border: 2px solid transparent;
   border-radius: var(--btn-radius);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   box-shadow:
-    0 2px 4px rgba(0,0,0,.08),
-    0 6px 18px -4px rgba(139,75,60,.35),
-    0 0 0 0 rgba(139,75,60,.0);
+    0 2px 4px rgba(0, 0, 0, .08),
+    0 6px 18px -4px rgba(139, 75, 60, .35),
+    0 0 0 0 rgba(139, 75, 60, .0);
   cursor: pointer;
   text-decoration: none;
   transition:
-    box-shadow .5s cubic-bezier(.4,0,.2,1),
-    transform .5s cubic-bezier(.4,0,.2,1),
+    box-shadow .5s cubic-bezier(.4, 0, .2, 1),
+    transform .5s cubic-bezier(.4, 0, .2, 1),
     color .4s ease,
     background .5s ease,
     letter-spacing .5s ease;
@@ -327,8 +324,8 @@
 /* Layer de brilho interno suave */
 .service-cta::before {
   background:
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 60%),
-    linear-gradient(145deg, rgba(255,255,255,.35), rgba(255,255,255,0) 60%);
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(145deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 60%);
   mix-blend-mode: screen;
   opacity: .55;
   transition: opacity .6s ease;
@@ -338,19 +335,21 @@
 /* Sheen animado ao hover */
 .service-cta::after {
   background: linear-gradient(115deg,
-    transparent 0%,
-    rgba(255,255,255,.0) 45%,
-    rgba(255,255,255,.65) 50%,
-    rgba(255,255,255,0) 55%,
-    transparent 100%);
+      transparent 0%,
+      rgba(255, 255, 255, .0) 45%,
+      rgba(255, 255, 255, .65) 50%,
+      rgba(255, 255, 255, 0) 55%,
+      transparent 100%);
   transform: translateX(-130%) skewX(-18deg);
-  transition: transform 1s cubic-bezier(.77,0,.18,1);
+  transition: transform 1s cubic-bezier(.77, 0, .18, 1);
   z-index: 2;
 }
 
 /* Ícone seta substitui o antigo ::after (usamos span pseudo) */
-.service-cta > .icon-arrow,
-.service-cta::marker { display:none; }
+.service-cta>.icon-arrow,
+.service-cta::marker {
+  display: none;
+}
 
 .service-cta span.btn-label {
   position: relative;
@@ -359,22 +358,24 @@
 }
 
 /* Mantém compatibilidade com texto direto (sem span) */
-.service-cta:not(:has(.btn-label)) { letter-spacing: .18em; }
+.service-cta:not(:has(.btn-label)) {
+  letter-spacing: .18em;
+}
 
 .service-card:hover .service-cta {
   box-shadow:
-    0 4px 14px -4px rgba(139,75,60,.32),
-    0 10px 32px -6px rgba(139,75,60,.40);
+    0 4px 14px -4px rgba(139, 75, 60, .32),
+    0 10px 32px -6px rgba(139, 75, 60, .40);
 }
 
 /* === OVERRIDE: alinhar botão à cor do título (#8B4B3C) === */
 .service-cta {
   --btn-base: #8B4B3C;
-  --btn-grad: linear-gradient(135deg,var(--btn-base) 0%,var(--btn-base) 100%);
+  --btn-grad: linear-gradient(135deg, var(--btn-base) 0%, var(--btn-base) 100%);
   --btn-text: var(--btn-base);
   color: var(--btn-text);
   background:
-    linear-gradient(#ffffff,#ffffff) padding-box,
+    linear-gradient(#ffffff, #ffffff) padding-box,
     var(--btn-grad) border-box;
   border: 2px solid transparent;
   letter-spacing: .14em;
@@ -383,34 +384,36 @@
 .service-cta::before {
   /* brilho mais discreto, mesma paleta */
   background:
-    radial-gradient(circle at 28% 22%, rgba(255,255,255,.85) 0%, rgba(255,255,255,0) 62%),
-    linear-gradient(145deg, rgba(255,255,255,.28), rgba(255,255,255,0) 60%);
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, .85) 0%, rgba(255, 255, 255, 0) 62%),
+    linear-gradient(145deg, rgba(255, 255, 255, .28), rgba(255, 255, 255, 0) 60%);
   opacity: .5;
 }
 
 .service-cta::after {
   /* mantém sheen, mas sem contraste exagerado */
   background: linear-gradient(115deg,
-    transparent 0%,
-    rgba(255,255,255,.0) 45%,
-    rgba(255,255,255,.55) 50%,
-    rgba(255,255,255,0) 55%,
-    transparent 100%);
+      transparent 0%,
+      rgba(255, 255, 255, .0) 45%,
+      rgba(255, 255, 255, .55) 50%,
+      rgba(255, 255, 255, 0) 55%,
+      transparent 100%);
 }
 
 .service-cta:hover {
   background:
-    linear-gradient(var(--btn-base),var(--btn-base)) padding-box,
+    linear-gradient(var(--btn-base), var(--btn-base)) padding-box,
     var(--btn-grad) border-box;
   color: #fff;
   letter-spacing: .18em;
 }
 
-.service-cta:hover::before { opacity: .75; }
+.service-cta:hover::before {
+  opacity: .75;
+}
 
 .service-cta:active {
   background:
-    linear-gradient(var(--btn-base),var(--btn-base)) padding-box,
+    linear-gradient(var(--btn-base), var(--btn-base)) padding-box,
     var(--btn-grad) border-box;
   color: #fff;
 }
@@ -418,21 +421,23 @@
 .service-cta:focus-visible {
   box-shadow:
     0 0 0 3px #fff,
-    0 0 0 6px rgba(139,75,60,.55);
+    0 0 0 6px rgba(139, 75, 60, .55);
 }
 
 .service-cta:disabled,
 .service-cta[aria-disabled="true"] {
   background:
-    linear-gradient(#ffffff,#ffffff) padding-box,
+    linear-gradient(#ffffff, #ffffff) padding-box,
     var(--btn-grad) border-box;
-  color: rgba(139,75,60,.55);
+  color: rgba(139, 75, 60, .55);
   opacity: .55;
 }
 
 /* Redução de movimento (respeita blocos anteriores) */
 @media (prefers-reduced-motion: reduce) {
-  .service-cta { transition: none !important; }
+  .service-cta {
+    transition: none !important;
+  }
 }
 
 /* Responsividade */
@@ -440,28 +445,37 @@
   .service-card {
     min-height: 520px;
   }
-  
+
   .service-content {
     padding: 2rem 2rem 2.2rem;
   }
-  
+
   .service-title {
     font-size: 1.4rem;
   }
-  
+
   .service-desc {
     font-size: 1rem;
   }
-  
+
   /* Ajuste específico: desce a imagem de fundo do primeiro card no desktop */
   .service-card:nth-child(1) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
 
- .service-card:nth-child(2) .card-bg {
+  .service-card:nth-child(2) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+  }
+
+
+  .service-card:nth-child(3) .card-bg {
+    background-size: 90%;
+    background-position: center 25%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
 
 
@@ -473,13 +487,22 @@
   /* Ajuste específico: desce a imagem de fundo do primeiro card no desktop */
   .service-card:nth-child(1) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
 
-   .service-card:nth-child(2) .card-bg {
+  .service-card:nth-child(2) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
+
+  .service-card:nth-child(3) .card-bg {
+    background-size: 90%;
+    background-position: center 22%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+  }
+
 
 }
 
@@ -488,31 +511,34 @@
   .services-header {
     margin-bottom: 3rem;
   }
-  
+
   .service-card {
     min-height: 440px;
   }
-  
+
   .service-card .card-bg {
     height: 200px;
   }
-  
+
   .service-content {
     padding: 1.4rem 1.2rem 1.6rem;
   }
-  
+
   .primary-cta {
     padding: 1rem 2rem;
   }
+
   /* Ajuste específico: desce a imagem de fundo do primeiro card no desktop */
   .service-card:nth-child(1) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
 
-   .service-card:nth-child(2) .card-bg {
+  .service-card:nth-child(2) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
 
 
@@ -523,7 +549,7 @@
   .services-grid {
     padding: 0 .75rem;
   }
-  
+
   .service-card .card-bg {
     height: 180px;
   }
@@ -531,11 +557,14 @@
   /* Ajuste específico: desce a imagem de fundo do primeiro card no desktop */
   .service-card:nth-child(1) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
-   .service-card:nth-child(2) .card-bg {
+
+  .service-card:nth-child(2) .card-bg {
     background-size: 90%;
-    background-position: center 13%; /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+    background-position: center 13%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
 
 
@@ -543,11 +572,12 @@
 
 /* Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
+
   .service-card,
   .service-card:nth-child(n) {
     animation: none;
   }
-  
+
   .service-card,
   .service-cta,
   .primary-cta,
@@ -555,13 +585,15 @@
     transition: none;
   }
 }
+
 /* Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
+
   .service-card,
   .service-card:nth-child(n) {
     animation: none;
   }
-  
+
   .service-card,
   .service-cta,
   .primary-cta,
@@ -586,8 +618,8 @@
 .service-cta:active {
   color: #8B4B3C !important;
   background:
-    linear-gradient(#ffffff,#ffffff) padding-box,
-    var(--btn-grad, linear-gradient(135deg,#8B4B3C,#8B4B3C)) border-box;
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    var(--btn-grad, linear-gradient(135deg, #8B4B3C, #8B4B3C)) border-box;
   letter-spacing: .18em;
 }
 
@@ -607,13 +639,16 @@
 
 /* seletor mais específico para garantir que vença */
 .services .services-grid .service-card .service-cta {
-  --btn-base: #8B4B3C; /* novo tom desejado */
-  color: var(--btn-base) !important; /* temporário enquanto debuga */
+  --btn-base: #8B4B3C;
+  /* novo tom desejado */
+  color: var(--btn-base) !important;
+  /* temporário enquanto debuga */
   background:
-    linear-gradient(#ffffff,#ffffff) padding-box,
+    linear-gradient(#ffffff, #ffffff) padding-box,
     linear-gradient(135deg, var(--btn-base), #b4e0d9) border-box;
   border: 2px solid transparent;
 }
+
 .services .services-grid .service-card .service-cta span,
 .services .services-grid .service-card .service-cta .btn-label {
   color: var(--btn-base) !important;

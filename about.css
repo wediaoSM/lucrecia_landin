@@ -205,7 +205,8 @@ body,
   border-radius: 60px;
   background: linear-gradient(135deg, #d7a59d, #c2b8b0);
   color: #fff;
-  border: none !important; /* Remove a borda preta */
+  border: none !important;
+  /* Remove a borda preta */
   box-shadow: 0 10px 26px -12px rgba(170, 130, 110, .45);
   transition: .55s cubic-bezier(.66, .01, .27, 1);
 }
@@ -213,12 +214,14 @@ body,
 .about-minimal .about-btn.slim:hover {
   transform: translateY(-4px);
   filter: brightness(1.05);
-  border: none !important; /* Garante que não apareça no hover */
+  border: none !important;
+  /* Garante que não apareça no hover */
 }
 
 .about-minimal .about-btn.slim:active {
   transform: translateY(0) scale(.94);
-  border: none !important; /* Garante que não apareça no active */
+  border: none !important;
+  /* Garante que não apareça no active */
 }
 
 /* Adiciona regra específica para remover borda de todos os botões about */
@@ -228,7 +231,8 @@ body,
 }
 
 .about-btn:focus-visible {
-  outline: 2px solid #d7a59d !important; /* Mantém apenas o outline de acessibilidade */
+  outline: 2px solid #d7a59d !important;
+  /* Mantém apenas o outline de acessibilidade */
   outline-offset: 3px;
   border: none !important;
 }
@@ -276,7 +280,7 @@ body,
   align-items: start;
   max-width: 1040px;
   margin: 0 auto;
-  padding: clamp(2.4rem, 6vw, 4.2rem) clamp(1.2rem, 4vw, 2.4rem);
+  padding: clamp(2.1rem, 4vw, 4.0rem) clamp(1.2rem, 4vw, 2.4rem) clamp(1rem, 3vw, 2rem) clamp(1.2rem, 4vw, 2.4rem);
 }
 
 .about-minimal .about-photo {
@@ -317,10 +321,10 @@ body,
 
 .about-minimal .about-title {
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 3.8vw, 2.8rem);
   letter-spacing: .04em;
-  font-weight: 700;
+  font-weight: 800;
   color: #2f2724;
   line-height: .95;
 }
@@ -385,7 +389,8 @@ body,
   border-radius: 60px;
   background: linear-gradient(135deg, #d7a59d, #c2b8b0);
   color: #fff;
-  border: none !important; /* Remove a borda preta */
+  border: none !important;
+  /* Remove a borda preta */
   box-shadow: 0 10px 26px -12px rgba(170, 130, 110, .45);
   transition: .55s cubic-bezier(.66, .01, .27, 1);
 }
@@ -393,12 +398,14 @@ body,
 .about-minimal .about-btn.slim:hover {
   transform: translateY(-4px);
   filter: brightness(1.05);
-  border: none !important; /* Garante que não apareça no hover */
+  border: none !important;
+  /* Garante que não apareça no hover */
 }
 
 .about-minimal .about-btn.slim:active {
   transform: translateY(0) scale(.94);
-  border: none !important; /* Garante que não apareça no active */
+  border: none !important;
+  /* Garante que não apareça no active */
 }
 
 /* Divisor inferior para separar do PASSOS */
@@ -488,7 +495,7 @@ body,
   }
 
   .about-minimal .about-title {
-    font-size: clamp(1.45rem, 6.5vw, 1.9rem);
+    font-size: clamp(1.2rem, 5.5vw, 1.6rem);
   }
 
   .about-minimal .about-intro {
@@ -598,7 +605,8 @@ body,
 
 @media (max-width: 400px) {
   .about-shell {
-    display: block !important; /* cancela grid/flex */
+    display: block !important;
+    /* cancela grid/flex */
   }
 
   .about-photo {
@@ -609,18 +617,21 @@ body,
   }
 
   .about-photo img {
-    width: 100px;   /* tamanho fixo menor */
+    width: 100px;
+    /* tamanho fixo menor */
     height: auto;
-    border-radius: 8px; /* ou 50% se quiser redonda */
+    border-radius: 8px;
+    /* ou 50% se quiser redonda */
     margin: 0 auto;
     display: block;
   }
 
   .about-content {
-    text-align: center; /* centraliza o texto */
+    text-align: center;
+    /* centraliza o texto */
   }
 
-    /* Centraliza os botões do About */
+  /* Centraliza os botões do About */
   .about-actions,
   .about-minimal .about-actions-minimal {
     justify-content: center;
@@ -629,11 +640,14 @@ body,
 }
 
 @media (max-width: 400px) {
+
   /* controla o container figure */
   .about-minimal .about-photo {
-    width: 200px !important;   /* controla o tamanho no mobile */
+    width: 200px !important;
+    /* controla o tamanho no mobile */
     height: auto !important;
-    margin: 0 auto 16px !important; /* centraliza e dá espaçamento */
+    margin: 0 auto 16px !important;
+    /* centraliza e dá espaçamento */
   }
 
   /* garante que a img se adapte ao figure */
@@ -642,7 +656,7 @@ body,
     height: auto !important;
     display: block !important;
     object-fit: contain !important;
-    border-radius: 8px; /* 50% se quiser avatar redondo */
+    border-radius: 8px;
+    /* 50% se quiser avatar redondo */
   }
 }
-
