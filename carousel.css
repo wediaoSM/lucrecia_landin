@@ -1,6 +1,6 @@
 :root {
-  --carousel-height: 530px;
-  /* antes 380px */
+  --carousel-height: 650px;
+  /* antes 530px - aumentado para melhor visualização no desktop */
   --carousel-radius: 18px;
   --carousel-bg: #111;
   --carousel-accent: #ff2f74;
@@ -59,12 +59,21 @@
   height: 100%;
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
   padding: clamp(.75rem, 2.2vw, 2rem);
   color: var(--carousel-text);
   overflow: hidden;
+}
+
+/* Ajuste específico para garantir melhor enquadramento em desktop */
+@media (min-width:1024px) {
+  .slide {
+    background-position: center top;
+    /* prioriza mostrar a parte superior das imagens */
+  }
 }
 
 /* suaviza overlay em mobile */
@@ -168,20 +177,12 @@
   transform: translateY(-50%) scale(.97);
 }
 
-/* Dots */
-.carousel-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 15;
-  padding: .35rem .6rem;
-  background: rgba(20, 20, 24, .42);
-  backdrop-filter: blur(10px);
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, .08);
+/* Dots - OCULTADOS */
+.carousel-dots,
+.carousel-dot {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 .carousel-dot {
@@ -264,26 +265,60 @@
 @media (min-width:1100px) {
   .works-feature.works-wide .carousel {
     /* leve bleed horizontal controlado */
+    height: 920px;
     width: calc(100% + 4rem);
     margin-left: -2rem;
     margin-right: -2rem;
   }
 }
 
-/* Ajuste altura levemente para reforçar presença visual em telas grandes */
+/* Ajuste altura para desktop - melhor visualização das imagens */
 @media (min-width:1200px) {
+  :root {
+    --carousel-height: 720px;
+    /* altura maior para desktop */
+  }
+
   .works-feature .slide {
-    height: 620px;
-    /* antes 560px */
+    height: 720px;
+    width: 500px;
+    /* altura ajustada para mostrar melhor as imagens */
+  }
+}
+
+/* Para telas muito grandes */
+@media (min-width:1600px) {
+  :root {
+    --carousel-height: 800px;
+    /* altura ainda maior para telas 4K */
+
+  }
+
+  .works-feature .slide {
+    height: 800px;
+  }
+
+  .slide {
+    background-position: center 35%;
+    background-size: 60%;
+    /* sobe a imagem de fundo para mostrar melhor a parte superior */
   }
 }
 
 /* ===== /LARGURA MAIOR ===== */
 
+/* Altura específica para laptops/tablets grandes */
+@media (min-width:821px) and (max-width:1199px) {
+  :root {
+    --carousel-height: 580px;
+    /* altura intermediária para laptops */
+  }
+}
+
 /* Responsividade */
 @media (max-width:820px) {
   :root {
-    --carousel-height: 330px;
+    --carousel-height: 530px;
     /* antes 300px */
   }
 
@@ -372,4 +407,16 @@
     --carousel-height: 300px;
     /* antes 300px */
   }
+}
+
+/* FORÇA REMOÇÃO DAS BOLINHAS - OVERRIDE FINAL */
+.carousel-dots,
+.carousel .carousel-dots,
+div[class*="carousel-dot"],
+.carousel-dot,
+button[class*="dot"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }

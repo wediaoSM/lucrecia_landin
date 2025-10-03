@@ -27,7 +27,7 @@ html,
 body {
   height: 100%;
   margin: 0;
- 
+
   font-family: Montserrat, system-ui, Arial, sans-serif;
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased
@@ -101,7 +101,8 @@ a {
 .topbar-desktop {
   display: flex;
   align-items: center;
-  justify-content: center; /* centraliza o topo no desktop */
+  justify-content: center;
+  /* centraliza o topo no desktop */
   gap: 16px;
 }
 
@@ -110,7 +111,8 @@ a {
   flex-direction: column;
   gap: 6px;
   font-size: 14px;
-  text-align: center; /* centraliza marca/subtítulo */
+  text-align: center;
+  /* centraliza marca/subtítulo */
 }
 
 .logo-title {
@@ -147,7 +149,8 @@ a {
 .hero-center {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza o bloco do herói em todas as larguras */
+  align-items: center;
+  /* centraliza o bloco do herói em todas as larguras */
   gap: 12px;
   margin-top: 20px;
   text-align: center;
@@ -166,7 +169,8 @@ a {
   letter-spacing: 6px;
   margin: 0;
   color: var(--sand-1);
-  text-align: center; /* título do herói centralizado */
+  text-align: center;
+  /* título do herói centralizado */
 }
 
 .hero-about {
@@ -231,10 +235,13 @@ a {
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
   margin: 8px 0 18px;
-  color: var(--sand-1)
+  color: var(--sand-1);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .lead {
@@ -301,7 +308,8 @@ a {
   position: relative;
   z-index: 2;
   color: var(--sand-5);
-  text-align: center; /* centraliza textos da seção de serviços */
+  text-align: center;
+  /* centraliza textos da seção de serviços */
 }
 
 .services-list {
@@ -428,6 +436,7 @@ a {
   .hero-name {
     font-size: 40px
   }
+
   .slide {
     height: 220px
   }
@@ -623,11 +632,13 @@ body::before {
 
 @media (max-width: 400px) {
   .about .about-grid {
-    display: block !important; /* cancela o grid */
+    display: block !important;
+    /* cancela o grid */
   }
 
   .about .about-right {
-    margin-bottom: 16px; /* espaçamento entre imagem e texto */
+    margin-bottom: 16px;
+    /* espaçamento entre imagem e texto */
   }
 }
 
@@ -641,11 +652,13 @@ body::before {
 
 @media (max-width: 600px) {
   .about .about-grid {
-    display: block !important; /* cancela o grid */
+    display: block !important;
+    /* cancela o grid */
   }
 
   .about .about-right {
-    margin-bottom: 16px; /* espaçamento entre imagem e texto */
+    margin-bottom: 16px;
+    /* espaçamento entre imagem e texto */
   }
 }
 

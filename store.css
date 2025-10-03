@@ -34,7 +34,7 @@
     font-size: clamp(1.4rem, 3.8vw, 2.8rem);
     letter-spacing: .04em;
     font-weight: 800;
-    color: #352d2a;
+    color: #8B4B3C;
     line-height: .95;
 }
 
@@ -42,7 +42,7 @@
     margin: 0;
     font-size: clamp(.9rem, 1rem + .15vw, 1.2rem);
     line-height: 1.55;
-    color: #5b524c;
+    color: #8B4B3C;
 }
 
 .store-grid {
@@ -339,9 +339,24 @@
     box-shadow: none !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .side-block {
         display: none !important;
+    }
+
+    .store-side-info {
+        display: none !important;
+    }
+
+    .store-grid {
+        grid-template-columns: 1fr !important;
+        justify-items: center;
+        gap: 2rem;
+    }
+
+    .store-card {
+        max-width: 100%;
+        width: 100%;
     }
 }
 

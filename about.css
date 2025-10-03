@@ -325,7 +325,7 @@ body,
   font-size: clamp(1.6rem, 3.8vw, 2.8rem);
   letter-spacing: .04em;
   font-weight: 800;
-  color: #2f2724;
+  color: #d7a59d;
   line-height: .95;
 }
 
@@ -443,6 +443,28 @@ body,
 }
 
 /* Responsivo */
+@media (max-width: 768px) {
+  .about-minimal .about-shell {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center;
+  }
+
+  .about-minimal .about-photo {
+    max-width: 280px;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .about-minimal .about-content {
+    text-align: center;
+  }
+
+  .about-minimal .about-actions-minimal {
+    justify-content: center;
+  }
+}
+
 @media (max-width:860px) {
   .about-minimal .about-shell {
     grid-template-columns: minmax(200px, 260px) 1fr;
@@ -471,8 +493,23 @@ body,
 
 @media (max-width:600px) {
   .about-minimal .about-shell {
-    grid-template-columns: minmax(170px, 200px) 1fr !important;
-    gap: 1.6rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.8rem !important;
+    text-align: center;
+  }
+
+  .about-minimal .about-photo {
+    max-width: 260px;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .about-minimal .about-content {
+    text-align: center;
+  }
+
+  .about-minimal .about-actions-minimal {
+    justify-content: center;
   }
 
   .about-minimal .about-intro {
@@ -482,16 +519,27 @@ body,
   .about-minimal .about-facts li {
     font-size: .72rem;
   }
-
-  .about-minimal .about-photo {
-    min-height: 430px;
-  }
 }
 
 @media (max-width:480px) {
   .about-minimal .about-shell {
-    grid-template-columns: minmax(140px, 165px) 1fr !important;
-    gap: 1.1rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    text-align: center;
+  }
+
+  .about-minimal .about-photo {
+    max-width: 240px;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .about-minimal .about-content {
+    text-align: center;
+  }
+
+  .about-minimal .about-actions-minimal {
+    justify-content: center;
   }
 
   .about-minimal .about-title {
