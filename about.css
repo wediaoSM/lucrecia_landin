@@ -322,11 +322,14 @@ body,
 .about-minimal .about-title {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.6rem, 3.8vw, 2.8rem);
-  letter-spacing: .04em;
-  font-weight: 800;
-  color: #d7a59d;
-  line-height: .95;
+  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  letter-spacing: .05em;
+  font-weight: 700;
+  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.02;
 }
 
 .about-minimal .about-underline {

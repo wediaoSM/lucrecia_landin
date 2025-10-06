@@ -226,3 +226,228 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
+// Funcionalidade do Newsletter
+document.addEventListener('DOMContentLoaded', () => {
+  const newsletterForm = document.querySelector('.newsletter-form');
+  const newsletterInput = document.querySelector('.newsletter-input');
+  const newsletterBtn = document.querySelector('.newsletter-btn');
+
+  if (newsletterForm && newsletterInput && newsletterBtn) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Previne o reload da página
+      
+      const email = newsletterInput.value.trim();
+      
+      // Validação básica de email
+      if (!email) {
+        showMessage('Por favor, digite seu e-mail.', 'error');
+        return;
+      }
+      
+      if (!isValidEmail(email)) {
+        showMessage('Por favor, digite um e-mail válido.', 'error');
+        return;
+      }
+      
+      // Salva o email no localStorage
+      saveEmailToLocalStorage(email);
+      
+      // Limpa o campo
+      newsletterInput.value = '';
+      
+      // Mostra mensagem de sucesso
+      showMessage('E-mail cadastrado com sucesso! 🎉', 'success');
+    });
+  }
+
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  function saveEmailToLocalStorage(email) {
+    // Pega a lista existente ou cria uma nova
+    let emails = JSON.parse(localStorage.getItem('newsletter-emails') || '[]');
+    
+    // Verifica se o email já existe
+    if (!emails.includes(email)) {
+      emails.push(email);
+      localStorage.setItem('newsletter-emails', JSON.stringify(emails));
+      console.log('📧 Email salvo:', email);
+      console.log('📋 Total de emails cadastrados:', emails.length);
+    } else {
+      showMessage('Este e-mail já está cadastrado! 📧', 'info');
+      return;
+    }
+  }
+
+  function showMessage(text, type = 'success') {
+    // Remove mensagem anterior se existir
+    const existingMessage = document.querySelector('.newsletter-message');
+    if (existingMessage) {
+      existingMessage.remove();
+    }
+
+    // Cria a mensagem
+    const message = document.createElement('div');
+    message.className = `newsletter-message newsletter-message--${type}`;
+    message.textContent = text;
+    
+    // Estilos inline para a mensagem
+    Object.assign(message.style, {
+      position: 'absolute',
+      top: '100%',
+      left: '0',
+      right: '0',
+      marginTop: '0.5rem',
+      padding: '0.75rem 1rem',
+      borderRadius: '8px',
+      fontSize: '0.85rem',
+      fontWeight: '600',
+      textAlign: 'center',
+      zIndex: '10',
+      opacity: '0',
+      transform: 'translateY(-10px)',
+      transition: 'all 0.3s ease'
+    });
+
+    // Cores baseadas no tipo
+    if (type === 'success') {
+      Object.assign(message.style, {
+        backgroundColor: '#d4edda',
+        color: '#155724',
+        border: '1px solid #c3e6cb'
+      });
+    } else if (type === 'error') {
+      Object.assign(message.style, {
+        backgroundColor: '#f8d7da',
+        color: '#721c24',
+        border: '1px solid #f5c6cb'
+      });
+    } else if (type === 'info') {
+      Object.assign(message.style, {
+        backgroundColor: '#d1ecf1',
+        color: '#0c5460',
+        border: '1px solid #bee5eb'
+      });
+    }
+
+    // Adiciona posição relativa ao container do form
+    newsletterForm.style.position = 'relative';
+    
+    // Adiciona a mensagem
+    newsletterForm.appendChild(message);
+    
+    // Anima a entrada
+    setTimeout(() => {
+      message.style.opacity = '1';
+      message.style.transform = 'translateY(0)';
+    }, 10);
+    
+    // Remove a mensagem após 4 segundos
+    setTimeout(() => {
+      message.style.opacity = '0';
+      message.style.transform = 'translateY(-10px)';
+      setTimeout(() => {
+        if (message.parentNode) {
+          message.remove();
+        }
+      }, 300);
+    }, 4000);
+  }
+
+  // Função para desenvolvedores verem os emails cadastrados
+  window.getNewsletterEmails = function() {
+    const emails = JSON.parse(localStorage.getItem('newsletter-emails') || '[]');
+    console.log('📧 Emails cadastrados:', emails);
+    return emails;
+  };
+
+  // Função para limpar todos os emails (desenvolvimento)
+  window.clearNewsletterEmails = function() {
+    localStorage.removeItem('newsletter-emails');
+    console.log('🗑️ Todos os emails foram removidos');
+  };
+});
+
+// Funcionalidade do Botão WhatsApp
+document.addEventListener('DOMContentLoaded', () => {
+  const whatsappBtn = document.getElementById('whatsapp-float');
+  
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', function() {
+      const phoneNumber = '5527996003604'; // Número com código do país (55) e DDD (27)
+      const message = 'Oi! 😍 Vi seu site e me apaixonei pelo seu trabalho! ✨ Queria saber mais sobre seus serviços de makeup, você tem agenda disponível? 💄💕'; // Mensagem padrão
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      
+      // Abre o WhatsApp em uma nova aba
+      window.open(whatsappURL, '_blank');
+      
+      // Feedback visual opcional
+      whatsappBtn.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        whatsappBtn.style.transform = '';
+      }, 150);
+    });
+    
+    // Adiciona um pequeno atraso na aparição do botão para criar um efeito suave
+    setTimeout(() => {
+      whatsappBtn.style.opacity = '1';
+      whatsappBtn.style.transform = 'scale(1)';
+    }, 1000);
+  }
+});
+
+// Funcionalidade do Botão Velvet PDF
+document.addEventListener('DOMContentLoaded', () => {
+  const velvetBtn = document.getElementById('velvet-cta');
+  
+  if (velvetBtn) {
+    velvetBtn.addEventListener('click', function() {
+      // Abre o PDF do Velvet em uma nova aba
+      window.open('pdf/velvet.pdf', '_blank');
+      
+      // Feedback visual opcional
+      velvetBtn.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        velvetBtn.style.transform = '';
+      }, 150);
+    });
+  }
+});
+
+// Funcionalidade do Botão Noivas PDF
+document.addEventListener('DOMContentLoaded', () => {
+  const noivasBtn = document.getElementById('noivas-cta');
+  
+  if (noivasBtn) {
+    noivasBtn.addEventListener('click', function() {
+      // Abre o PDF de Noivas em uma nova aba
+      window.open('pdf/noivas.pdf', '_blank');
+      
+      // Feedback visual opcional
+      noivasBtn.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        noivasBtn.style.transform = '';
+      }, 150);
+    });
+  }
+});
+
+// Funcionalidade do Botão Portfólio PDF
+document.addEventListener('DOMContentLoaded', () => {
+  const portfolioBtn = document.getElementById('portfolio-cta');
+  
+  if (portfolioBtn) {
+    portfolioBtn.addEventListener('click', function() {
+      // Abre o PDF do Portfólio em uma nova aba
+      window.open('pdf/portofolio.pdf', '_blank');
+      
+      // Feedback visual opcional
+      portfolioBtn.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        portfolioBtn.style.transform = '';
+      }, 150);
+    });
+  }
+});

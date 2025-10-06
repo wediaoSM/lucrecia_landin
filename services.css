@@ -144,12 +144,15 @@
 }
 
 .service-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: .03em;
-  color: #8B4B3C;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.25;
   text-transform: uppercase;
 }
 
@@ -290,10 +293,8 @@
   letter-spacing: .15em;
   text-transform: uppercase;
   line-height: 1;
-  color: var(--btn-text);
-  background:
-    linear-gradient(#fff, #fff) padding-box,
-    var(--btn-grad) border-box;
+  color: #d7a59d;
+  position: relative;
   border: 2px solid transparent;
   border-radius: var(--btn-radius);
   -webkit-backdrop-filter: blur(6px);
@@ -448,12 +449,33 @@
     min-height: 460px;
   }
 
+/* === TEXTO GRADIENTE SEGURO NO BOTÃO === */
+.service-cta { color: #d7a59d; }
+.service-cta .cta-text { 
+  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  display: inline-block;
+}
+/* Hover mantém legibilidade */
+.service-cta:hover .cta-text { filter: brightness(1.05); }
+/* Active leve */
+.service-cta:active .cta-text { filter: brightness(.92); }
+@supports not (-webkit-background-clip: text) {
+  .service-cta .cta-text { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
+}
+
   .service-content {
     padding: 2rem 2rem 2.2rem;
   }
 
   .service-title {
     font-size: 1.4rem;
+    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .service-desc {
@@ -477,6 +499,13 @@
   .service-card:nth-child(3) .card-bg {
     background-size: 90%;
     background-position: center 25%;
+    /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
+  }
+
+  
+  .service-card:nth-child(4) .card-bg {
+    background-size: 90%;
+    background-position: center 40%;
     /* ajuste fino: aumente ou diminua (ex: 55%, 65%) */
   }
 
@@ -611,29 +640,30 @@
   }
 }
 
-/* === OVERRIDE FINAL: cor fixa #8B4B3C no texto dos botões "SAIBA MAIS" === */
+/* === OVERRIDE FINAL: cor consistente com gradiente nos botões "SAIBA MAIS" === */
 .service-cta {
-  --btn-base: #8B4B3C;
-  color: #8B4B3C !important;
+  --btn-base: #d7a59d;
+  color: #d7a59d !important;
 }
 
 .service-cta span,
-.service-cta .btn-label {
-  color: #8B4B3C !important;
+.service-cta .btn-label,
+.service-cta .cta-text {
+  color: #d7a59d !important;
 }
 
 /* Mantém o efeito de elevação mas não troca para fundo sólido */
 .service-cta:hover,
 .service-cta:active {
-  color: #8B4B3C !important;
+  color: #d7a59d !important;
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
-    var(--btn-grad, linear-gradient(135deg, #8B4B3C, #8B4B3C)) border-box;
+    var(--btn-grad, linear-gradient(135deg, #d7a59d, #c2b8b0)) border-box;
   letter-spacing: .18em;
 }
 
 .service-cta:focus-visible {
-  color: #8B4B3C !important;
+  color: #d7a59d !important;
 }
 
 .service-cta[data-loading] {
@@ -648,17 +678,16 @@
 
 /* seletor mais específico para garantir que vença */
 .services .services-grid .service-card .service-cta {
-  --btn-base: #8B4B3C;
-  /* novo tom desejado */
+  --btn-base: #d7a59d;
   color: var(--btn-base) !important;
-  /* temporário enquanto debuga */
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, var(--btn-base), #b4e0d9) border-box;
+    linear-gradient(135deg, var(--btn-base), #c2b8b0) border-box;
   border: 2px solid transparent;
 }
 
 .services .services-grid .service-card .service-cta span,
-.services .services-grid .service-card .service-cta .btn-label {
+.services .services-grid .service-card .service-cta .btn-label,
+.services .services-grid .service-card .service-cta .cta-text {
   color: var(--btn-base) !important;
 }

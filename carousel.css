@@ -420,3 +420,55 @@ button[class*="dot"] {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* ===== PRODUÇÕES (bloco works) refinamentos visuais ===== */
+.works-feature .section-title {
+  margin: 0 0 .8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.45rem, 3.6vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: .055em;
+  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.02;
+  position: relative;
+  padding-left: 1.05rem;
+}
+
+.works-feature .section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: .55rem;
+  height: .55rem;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  box-shadow: 0 0 0 4px rgba(215,165,157,.22);
+}
+
+.works-feature .lead {
+  margin: 0 0 1.8rem;
+  font-size: clamp(.9rem, 1rem + .25vw, 1.18rem);
+  line-height: 1.55;
+  background: linear-gradient(135deg, rgba(215,165,157,.92), rgba(194,184,176,.92));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 680px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  filter: saturate(1.05);
+}
+
+@supports not (-webkit-background-clip: text) {
+  .works-feature .lead { color: #b49a88; -webkit-text-fill-color: initial; background: none; }
+}
+
+@supports not (-webkit-background-clip: text) {
+  .works-feature .section-title { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
+  .works-feature .section-title::before { background: #d7a59d; }
+}

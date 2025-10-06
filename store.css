@@ -31,18 +31,26 @@
 .store-title {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.4rem, 3.8vw, 2.8rem);
-    letter-spacing: .04em;
-    font-weight: 800;
-    color: #8B4B3C;
-    line-height: .95;
+    font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+    letter-spacing: .05em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.0;
 }
 
 .store-lead {
-    margin: 0;
-    font-size: clamp(.9rem, 1rem + .15vw, 1.2rem);
-    line-height: 1.55;
-    color: #8B4B3C;
+        margin: 0;
+        font-size: clamp(.9rem, 1rem + .15vw, 1.2rem);
+        line-height: 1.55;
+        color: #6f5e56;
+        max-width: 720px;
+}
+
+@supports not (-webkit-background-clip: text) {
+    .store-title { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
 }
 
 .store-grid {
@@ -228,17 +236,42 @@
 
 .side-block h4 {
     margin: 0;
-    font-size: .8rem;
-    letter-spacing: .3em;
+    font-size: .78rem;
+    letter-spacing: .32em;
     font-weight: 700;
-    color: #4d443f;
+    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.side-block h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: .65rem;
+    height: .65rem;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    box-shadow: 0 0 0 4px rgba(215, 165, 157, .18);
 }
 
 .side-block p {
-    margin: 0;
-    font-size: .74rem;
-    line-height: 1.5;
-    color: #5d544e;
+        margin: 0;
+        font-size: .72rem;
+        line-height: 1.55;
+        color: #665a54;
+        font-weight: 500;
+        letter-spacing: .02em;
+}
+
+@supports not (-webkit-background-clip: text) {
+    .side-block h4 { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
+    .side-block h4::before { background: #d7a59d; }
 }
 
 /* ===== Flat white theme overrides (aplicado abaixo do HERO) ===== */
