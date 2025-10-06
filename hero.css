@@ -165,15 +165,35 @@
   }
 }
 
-/* Mobile pequeno */
+/* Mobile pequeno - iPhone 14 e similares */
 @media (max-width: 400px) {
   .hero-logo {
-    width: clamp(300px, 40vw, 200px) !important;
+    width: clamp(120px, 35vw, 180px) !important;
     height: auto !important;
-
+    min-width: 120px !important;
   }
 
   .hero-logo-figure {
     transform: translateY(60px);
+  }
+}
+
+/* iPhone 14 e dispositivos similares - correção específica */
+@media (max-width: 430px) and (min-width: 360px) {
+  .hero-logo {
+    width: clamp(140px, 40vw, 200px) !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .hero-logo-figure {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transform: translateY(80px);
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
