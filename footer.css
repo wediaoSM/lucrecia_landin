@@ -6,7 +6,7 @@
   --ft-text-soft: #7a7069;
   --ft-accent: #a89c92;
   --ft-accent-strong: #8d7f74;
-  --ft-highlight: #d7a59d;
+  --ft-highlight: #d4c2a8;
   --ft-radius: 30px;
   --ft-shadow: 0 14px 48px -18px rgba(150, 130, 115, .35), 0 6px 24px -10px rgba(150, 130, 115, .25);
 }
@@ -109,7 +109,7 @@
   letter-spacing: .18em;
   font-weight: 600;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   color: #fff;
   text-decoration: none;
   box-shadow: 0 6px 20px -8px rgba(170, 130, 110, .45);
@@ -147,7 +147,7 @@
   bottom: -.4rem;
   width: 58px;
   height: 2px;
-  background: linear-gradient(90deg, #a89c92, #d7a59d, #c2b8b0);
+  background: linear-gradient(90deg, #a89c92, #d4c2a8, #c8b5a0);
   border-radius: 4px;
 }
 
@@ -176,7 +176,7 @@
   bottom: -2px;
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, #a89c92, #d7a59d, #c2b8b0);
+  background: linear-gradient(90deg, #a89c92, #d4c2a8, #c8b5a0);
   scale: 0 1;
   transform-origin: left;
   transition: .55s cubic-bezier(.66, .01, .27, 1);
@@ -230,7 +230,7 @@
   font-weight: 700;
   padding: .7rem 1.1rem .6rem;
   border-radius: 14px;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   color: #fff;
   cursor: pointer;
   box-shadow: 0 6px 20px -8px rgba(170, 130, 110, .45);

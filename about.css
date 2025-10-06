@@ -4,10 +4,10 @@
   /* Mantido apenas se necessário, será neutralizado */
   --sand-2: #a89c92;
   /* Ajuste origem imagem (#A89C92) */
-  --sand-3: #d7a59d;
-  /* (#D7A59D) */
-  --sand-4: #c2b8b0;
-  /* (#C2B8B0) */
+  --sand-3: #d4c2a8;
+  /* (#d4c2a8) */
+  --sand-4: #c8b5a0;
+  /* (#c8b5a0) */
   --sand-5: #d1c8c5;
   /* (#D1C8C5) */
   --sand-6: #dadadd;
@@ -140,7 +140,7 @@ body,
   place-items: center;
   font-size: .8rem;
   border-radius: 50%;
-  background: linear-gradient(145deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(145deg, #d4c2a8, #c8b5a0);
   color: #fff;
   box-shadow: 0 4px 12px -3px rgba(150, 120, 100, .35);
 }
@@ -166,7 +166,7 @@ body,
 }
 
 .about-btn.soft {
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   color: #fff;
   border: none;
   box-shadow: 0 8px 24px -8px rgba(170, 130, 110, .45);
@@ -203,7 +203,7 @@ body,
   font-weight: 600;
   padding: .85rem 1.5rem .75rem;
   border-radius: 60px;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   color: #fff;
   border: none !important;
   /* Remove a borda preta */
@@ -231,7 +231,7 @@ body,
 }
 
 .about-btn:focus-visible {
-  outline: 2px solid #d7a59d !important;
+  outline: 2px solid #d4c2a8 !important;
   /* Mantém apenas o outline de acessibilidade */
   outline-offset: 3px;
   border: none !important;
@@ -325,7 +325,7 @@ body,
   font-size: clamp(1.4rem, 3.2vw, 2.4rem);
   letter-spacing: .05em;
   font-weight: 700;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -335,7 +335,7 @@ body,
 .about-minimal .about-underline {
   width: 110px;
   height: 3px;
-  background: linear-gradient(90deg, #9b8b82, #d7a59d, #c2b8b0);
+  background: linear-gradient(90deg, #9b8b82, #d4c2a8, #c8b5a0);
   border-radius: 4px;
 }
 
@@ -372,7 +372,7 @@ body,
   top: .55rem;
   width: 8px;
   height: 8px;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   border-radius: 50%;
   box-shadow: 0 0 0 4px rgba(215, 165, 157, .15);
 }
@@ -390,7 +390,7 @@ body,
   font-weight: 600;
   padding: .85rem 1.5rem .75rem;
   border-radius: 60px;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   color: #fff;
   border: none !important;
   /* Remove a borda preta */

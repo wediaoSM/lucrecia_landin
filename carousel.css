@@ -466,7 +466,7 @@ button[class*="dot"] {
   font-size: clamp(1.25rem, 3.2vw, 2.1rem);
   font-weight: 700;
   letter-spacing: .055em;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -494,6 +494,6 @@ button[class*="dot"] {
 }
 
 @supports not (-webkit-background-clip: text) {
-  .works-feature .section-title { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
-  .works-feature .section-title::before { background: #d7a59d; }
+  .works-feature .section-title { color: #d4c2a8; -webkit-text-fill-color: initial; background: none; }
+  .works-feature .section-title::before { background: #d4c2a8; }
 }

@@ -100,7 +100,7 @@
 
 .service-card:hover {
   transform: translateY(-8px);
-  border-color: #d7a59d;
+  border-color: #d4c2a8;
   box-shadow:
     0 8px 16px rgba(122, 90, 70, .14),
     0 16px 48px rgba(122, 90, 70, .18);
@@ -147,7 +147,7 @@
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: .05em;
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -293,7 +293,7 @@
   letter-spacing: .15em;
   text-transform: uppercase;
   line-height: 1;
-  color: #d7a59d;
+  color: #d4c2a8;
   position: relative;
   border: 2px solid transparent;
   border-radius: var(--btn-radius);
@@ -450,9 +450,9 @@
   }
 
 /* === TEXTO GRADIENTE SEGURO NO BOTÃO === */
-.service-cta { color: #d7a59d; }
+.service-cta { color: #d4c2a8; }
 .service-cta .cta-text { 
-  background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+  background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
   -webkit-background-clip: text; 
   background-clip: text; 
   -webkit-text-fill-color: transparent; 
@@ -463,7 +463,7 @@
 /* Active leve */
 .service-cta:active .cta-text { filter: brightness(.92); }
 @supports not (-webkit-background-clip: text) {
-  .service-cta .cta-text { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
+  .service-cta .cta-text { color: #d4c2a8; -webkit-text-fill-color: initial; background: none; }
 }
 
   .service-content {
@@ -472,7 +472,7 @@
 
   .service-title {
     font-size: 1.4rem;
-    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -642,28 +642,28 @@
 
 /* === OVERRIDE FINAL: cor consistente com gradiente nos botões "SAIBA MAIS" === */
 .service-cta {
-  --btn-base: #d7a59d;
-  color: #d7a59d !important;
+  --btn-base: #d4c2a8;
+  color: #d4c2a8 !important;
 }
 
 .service-cta span,
 .service-cta .btn-label,
 .service-cta .cta-text {
-  color: #d7a59d !important;
+  color: #d4c2a8 !important;
 }
 
 /* Mantém o efeito de elevação mas não troca para fundo sólido */
 .service-cta:hover,
 .service-cta:active {
-  color: #d7a59d !important;
+  color: #d4c2a8 !important;
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
-    var(--btn-grad, linear-gradient(135deg, #d7a59d, #c2b8b0)) border-box;
+    var(--btn-grad, linear-gradient(135deg, #d4c2a8, #c8b5a0)) border-box;
   letter-spacing: .18em;
 }
 
 .service-cta:focus-visible {
-  color: #d7a59d !important;
+  color: #d4c2a8 !important;
 }
 
 .service-cta[data-loading] {
@@ -678,11 +678,11 @@
 
 /* seletor mais específico para garantir que vença */
 .services .services-grid .service-card .service-cta {
-  --btn-base: #d7a59d;
+  --btn-base: #d4c2a8;
   color: var(--btn-base) !important;
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, var(--btn-base), #c2b8b0) border-box;
+    linear-gradient(135deg, var(--btn-base), #c8b5a0) border-box;
   border: 2px solid transparent;
 }
 

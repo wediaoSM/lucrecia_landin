@@ -34,7 +34,7 @@
     font-size: clamp(1.3rem, 3.2vw, 2.4rem);
     letter-spacing: .05em;
     font-weight: 700;
-    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,7 +50,7 @@
 }
 
 @supports not (-webkit-background-clip: text) {
-    .store-title { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
+    .store-title { color: #d4c2a8; -webkit-text-fill-color: initial; background: none; }
 }
 
 .store-grid {
@@ -181,7 +181,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
     box-shadow: 0 0 0 4px rgba(215, 165, 157, .18);
 }
 
@@ -197,7 +197,7 @@
     font-weight: 600;
     padding: .8rem 1.4rem .72rem;
     border-radius: 90px;
-    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
     color: #fff;
     box-shadow: 0 14px 36px -16px rgba(170, 130, 110, .5);
     transition: .65s cubic-bezier(.66, .01, .27, 1);
@@ -213,7 +213,7 @@
 }
 
 .store-cta:focus-visible {
-    outline: 2px solid #d7a59d;
+    outline: 2px solid #d4c2a8;
     outline-offset: 3px;
 }
 
@@ -239,7 +239,7 @@
     font-size: .78rem;
     letter-spacing: .32em;
     font-weight: 700;
-    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -256,7 +256,7 @@
     width: .65rem;
     height: .65rem;
     border-radius: 4px;
-    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
     box-shadow: 0 0 0 4px rgba(215, 165, 157, .18);
 }
 
@@ -270,8 +270,8 @@
 }
 
 @supports not (-webkit-background-clip: text) {
-    .side-block h4 { color: #d7a59d; -webkit-text-fill-color: initial; background: none; }
-    .side-block h4::before { background: #d7a59d; }
+    .side-block h4 { color: #d4c2a8; -webkit-text-fill-color: initial; background: none; }
+    .side-block h4::before { background: #d4c2a8; }
 }
 
 /* ===== Flat white theme overrides (aplicado abaixo do HERO) ===== */
@@ -596,7 +596,7 @@
 
 /* Botão: destaque sem exagero */
 .store-card--with-bg .store-cta {
-    background: linear-gradient(135deg, #d7a59d, #c2b8b0);
+    background: linear-gradient(135deg, #d4c2a8, #c8b5a0);
     box-shadow: 0 8px 22px -12px rgba(90, 50, 40, .35);
     margin-top: .4rem;
 }

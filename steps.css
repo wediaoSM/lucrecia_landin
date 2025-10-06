@@ -1,7 +1,7 @@
 /* steps.css - versão ajustada: maior no desktop e mobile */
 :root {
   --ladder-accent-strong: #8d7f74;
-  --ladder-line: #d7a59d;
+  --ladder-line: #d4c2a8;
   --steps-left-width: 320px;
   /* aumentei coluna esquerda para desktop */
   --steps-left-width-sm: 220px;
@@ -277,7 +277,7 @@
   bottom: -12px;
   height: 3px;
   width: 120px;
-  background: linear-gradient(90deg, #9b8b82, #c2b8b0);
+  background: linear-gradient(90deg, #9b8b82, #c8b5a0);
   border-radius: 2px;
   opacity: .95;
 }
@@ -522,7 +522,7 @@
   width: min(1040px, 100% - 2rem);
   height: 9px;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, #d7a59d, #c2b8b0, #d7a59d);
+  background: linear-gradient(90deg, #d4c2a8, #c8b5a0, #d4c2a8);
   opacity: .4;
   border-radius: 0 0 10px 10px;
 }
