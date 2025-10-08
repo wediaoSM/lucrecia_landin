@@ -691,3 +691,18 @@
 .services .services-grid .service-card .service-cta .cta-text {
   color: var(--btn-base) !important;
 }
+
+/* Correção para mobile 360px e menores - texto dos títulos menor */
+@media (max-width: 360px) {
+  .service-title {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: .03em !important;
+  }
+  
+  /* Ajuste específico para o card "Auto maquiagem" que tem texto mais longo */
+  .service-card:nth-child(4) .service-title {
+    font-size: .95rem !important;
+    line-height: 1.15 !important;
+  }
+}
