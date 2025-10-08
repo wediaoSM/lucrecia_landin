@@ -249,6 +249,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       
+      // Verifica se o email já existe antes de salvar
+      if (isEmailAlreadyRegistered(email)) {
+        showMessage('Este e-mail já está cadastrado! 📧', 'info');
+        return;
+      }
+      
       // Salva o email no localStorage
       saveEmailToLocalStorage(email);
       
@@ -265,20 +271,20 @@ document.addEventListener('DOMContentLoaded', () => {
     return emailRegex.test(email);
   }
 
+  function isEmailAlreadyRegistered(email) {
+    const emails = JSON.parse(localStorage.getItem('newsletter-emails') || '[]');
+    return emails.includes(email);
+  }
+
   function saveEmailToLocalStorage(email) {
     // Pega a lista existente ou cria uma nova
     let emails = JSON.parse(localStorage.getItem('newsletter-emails') || '[]');
     
-    // Verifica se o email já existe
-    if (!emails.includes(email)) {
-      emails.push(email);
-      localStorage.setItem('newsletter-emails', JSON.stringify(emails));
-      console.log('📧 Email salvo:', email);
-      console.log('📋 Total de emails cadastrados:', emails.length);
-    } else {
-      showMessage('Este e-mail já está cadastrado! 📧', 'info');
-      return;
-    }
+    // Adiciona o email (já foi verificado que não existe)
+    emails.push(email);
+    localStorage.setItem('newsletter-emails', JSON.stringify(emails));
+    console.log('📧 Email salvo:', email);
+    console.log('📋 Total de emails cadastrados:', emails.length);
   }
 
   function showMessage(text, type = 'success') {
@@ -441,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (portfolioBtn) {
     portfolioBtn.addEventListener('click', function() {
       // Abre o PDF do Portfólio em uma nova aba
-      window.open('pdf/portofolio.pdf', '_blank');
+      window.open('pdf/portfolio.pdf', '_blank');
       
       // Feedback visual opcional
       portfolioBtn.style.transform = 'scale(0.95)';
