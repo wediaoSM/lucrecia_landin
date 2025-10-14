@@ -125,6 +125,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function next() { goTo(index + 1); }
     function prev() { goTo(index - 1); }
 
+    // Funções de autoplay
+    function startAutoplay() { 
+      if (!autoplayEnabled) return; 
+      stopAutoplay(); 
+      intervalId = setInterval(next, autoplayDelay); 
+    }
+    function stopAutoplay() { 
+      if (intervalId) { 
+        clearInterval(intervalId); 
+        intervalId = null; 
+      } 
+    }
+    function resetAutoplay() { 
+      stopAutoplay(); 
+      startAutoplay(); 
+    }
+
     if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetAutoplay(); });
     if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAutoplay(); });
 
@@ -456,4 +473,60 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 150);
     });
   }
+});
+
+// Lazy Loading para Imagens de Background
+document.addEventListener('DOMContentLoaded', () => {
+  // Intersection Observer para lazy loading
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+        
+        // Para elementos com data-bg, carrega background-image
+        if (element.dataset.bg) {
+          element.style.backgroundImage = `url('${element.dataset.bg}')`;
+          element.classList.add('bg-loaded');
+        }
+        
+        // Para elementos com data-card-photo, carrega CSS custom property
+        if (element.dataset.cardPhoto) {
+          element.style.setProperty('--card-photo', `url('${element.dataset.cardPhoto}')`);
+          element.classList.add('card-loaded');
+        }
+        
+        observer.unobserve(element);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '50px', // Carrega quando está 50px antes de aparecer
+    threshold: 0.1
+  });
+
+  // Observa elementos com lazy loading
+  document.querySelectorAll('[data-bg], [data-card-photo]').forEach(el => {
+    imageObserver.observe(el);
+  });
+  
+  console.log('🚀 Lazy loading ativado para imagens de background');
+});
+
+// Performance: Preload de imagens críticas
+document.addEventListener('DOMContentLoaded', () => {
+  const criticalImages = [
+    'imagens/logo.png',
+    'imagens/hero.jpeg',
+    'imagens/luh.jpeg'
+  ];
+  
+  criticalImages.forEach(src => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = src;
+    document.head.appendChild(link);
+  });
+  
+  console.log('⚡ Preload de imagens críticas ativado');
 });

@@ -27,7 +27,7 @@
   --radius-sm: 10px;
   --shadow-soft: 0 10px 28px -10px rgba(150, 130, 115, .25), 0 4px 14px -6px rgba(150, 130, 115, .18);
   --transition-base: .6s cubic-bezier(.66, .01, .27, 1);
-}
+/* (chave removida, era erro de sintaxe) */
 
 body,
 .page-content {
@@ -273,14 +273,24 @@ body,
 }
 
 /* Layout minimalista SOBRE */
+/* Centraliza verticalmente o conteúdo no desktop */
 .about-minimal .about-shell {
   display: grid;
   grid-template-columns: minmax(240px, 320px) 1fr;
   gap: 3.2rem;
-  align-items: start;
+  align-items: center;
   max-width: 1040px;
   margin: 0 auto;
   padding: clamp(2.1rem, 4vw, 4.0rem) clamp(1.2rem, 4vw, 2.4rem) clamp(1rem, 3vw, 2rem) clamp(1.2rem, 4vw, 2.4rem);
+}
+
+/* Garante que o conteúdo ocupe toda a altura da célula para centralização vertical */
+.about-minimal .about-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 }
 
 .about-minimal .about-photo {
